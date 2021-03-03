@@ -82,3 +82,19 @@ tbody td, tfoot td{
 article#center h1{
 	margin: 10px 20px 5px 20px;
 }
+
+#home-header {
+    width: 100%;
+    display: inline-block;
+}
+#featured-section {
+    margin: auto;
+    padding: 5em 10em 5em 10em;
+    overflow: auto;
+}
+.post-entry {
+    margin: 2em;
+}
+.post-entry .info {
+    display: inline-flex;
+}
