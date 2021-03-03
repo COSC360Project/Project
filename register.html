@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration and Login page</title>
+        <link rel=stylesheet href="css/style.css">
+    </head>
+    <body id="register-page-body">
+        <div class="register-page">
+            <div class="form">
+                <form class="register-form">
+                    <fieldset>
+                        <input type="text" autofocus placeholder="username"/>  
+                        <input type="text" autofocus placeholder="email"/> 
+                        <input type="password" autofocus placeholder="password"/>
+                        
+                        <input type="button" value="Create" id="registerbutton">
+                        <p class="message">Already Registered? <a href="#">Login</a>
+                        </p>
+                                                            
+                    </fieldset>
+                </form>
+                
+                <fieldset>
+                    <form class="login-form">
+                        <div class="login-form-error-message"></div>
+                        <input type="text" autofocus placeholder="username"/>
+                       
+                       
+                        <input type="password" autofocus placeholder = "password"/>
+                        <input type="button" value="login" id="loginbutton">
+                        
+                        <p class="message">Not Registered? <a href="#"> Register Now</a></p>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+        
+        <script>
+            $(".message a").click(function(){
+                $("form").animate({height:"toggle", opacity: "toggle"}, "slow");
+            });
+        </script>
+        
+        <script src="register.js"></script>
+    </body>
+</html>
