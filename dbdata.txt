@@ -1,0 +1,13 @@
+DROP TABLE Userinfo
+DROP TABLE Blogpost
+DROP TABLE Comment
+CREATE TABLE Userinfo(authorid INT AUTO_INCREMENT PRIMARY KEY NOT NULL,username VARCHAR(30) NOT NULL,password VARCHAR(30) NOT NULL, firstname VARCHAR(30) NOT NULL,lastname VARCHAR(30) NOT NULL,email VARCHAR(50) NOT NULL,country VARCHAR(40),admin BOOLEAN DEFAULT FALSE)
+CREATE TABLE Blogpost(postid INT AUTO_INCREMENT PRIMARY KEY NOT NULL,authorid INT NOT NULL,title VARCHAR(200),content TEXT, date DATE)
+CREATE TABLE Comment(commentid INT AUTO_INCREMENT PRIMARY KEY NOT NULL,postid INT NOT NULL, authorid INT NOT NULL,content TEXT, date DATE)
+INSERT INTO Userinfo(username,password,firstname,lastname,email,country,admin) VALUES ("catlover24","kittykat1995","Elise","Walker","ewalker24@gmail.com","Canada", TRUE)
+INSERT INTO Userinfo(username,password,firstname,lastname,email,country) VALUES ("football2005","password123","Brett","Anderson","fb4lyfe@gmail.com","Ireland")
+INSERT INTO Blogpost(authorid,title,content,date) VALUES (1,"Welcome to MyBlogPost!","Hello Everyone! My name is Elise, and this is MyBlogPost. Please be kind and respectful! :)","2019-10-17")
+INSERT INTO Blogpost(authorid,title,content,date) VALUES (2,"Football Playoffs","I scored a touchdown today at the big football playoffs. Everyone cheered. I was amazing. -Brett","2020-03-17")
+INSERT INTO Comment(postid,authorid,content,date) VALUES (1,2,"Hi Elise. Do you like football?","2020-03-05")
+INSERT INTO Comment(postid,authorid,content,date) VALUES (1,1,"Hello! No, cats are life :)","2020-03-06")
+INSERT INTO Comment(postid,authorid,content,date) VALUES (2,1,"Wow! Good job.","2020-03-18")
