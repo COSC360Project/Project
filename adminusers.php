@@ -38,35 +38,50 @@ if($error != null){
   $output = "<p>Unable to connect to database!</p>";
   exit($output);
 }else{
-	
-	$sql = "SELECT username,
-	if($_SERVER["REQUEST_METHOD"]=="POST"){
-		if(($_POST["username"] != "")){
-			$username = $_POST["username"];
-			$sql = "SELECT username,firstName,lastName,email FROM users WHERE username='".$username."'";
-			$result = mysqli_query($connection, $sql);
-			if ($result) {
-				$row = mysqli_fetch_assoc($result);
-				if (strcmp($row["username"],$username) ==0){
-					echo "<fieldset><legend>User: ".$username."</legend>";
-					echo "<table>";
-					echo "<tr><td>First Name:</td><td>".$row["firstName"]."</td></tr>";
-					echo "<tr><td>Last Name:</td><td>".$row["lastName"]."</td></tr>";
-					echo "<tr><td>Email:</td><td>".$row["email"]."</td></tr>";
-					echo "</table></fieldset>";
-				}else{
-					echo "<p>The user does not exist!</p>";
-				}	
-			}else{
-				printf("Error: %s\n", mysqli_error($connection));
-				exit();
+	$sql = "SELECT authorid,username,country,imageURL,status FROM Userinfo";
+	$result = mysqli_query($connection, $sql);
+	if ($result) {
+		echo "<table><tbody>";
+		while($row = mysqli_fetch_assoc($result)){echo "<tr>";
+			echo "<td>".$row["username"]."</td>";
+			echo "<td>".$row["country"]."</td>";
+			echo "<td>";
+			$authorid = $row["authorid"];
+			$postsql = "SELECT COUNT(*) FROM blogpost WHERE authorid = ".$authorid;
+			$postresult = mysqli_query($connection, $postsql);
+				if ($postresult) {
+					$postrow = mysqli_fetch_assoc($postresult);
+					echo $postrow["COUNT(*)"];
+				}
+			mysqli_free_result($postresult);
+			echo " Posts</td>";
+			echo "<td>";
+			$commentsql = "SELECT COUNT(*) FROM comment WHERE authorid = ".$authorid;
+			$commentresult = mysqli_query($connection, $commentsql);
+				if ($commentresult) {
+					$commentrow = mysqli_fetch_assoc($commentresult);
+					echo $commentrow["COUNT(*)"];
+				}
+			mysqli_free_result($commentresult);
+			echo " Comments</td>";
+			echo "<td>";
+			if ($row["status"] == 1){
+				echo "Administrator";
+			}else if ($row["status"] == 0){
+				echo "User";
+			}else if ($row["status"] == -1){
+				echo "Banned";
 			}
-		}else{
-			echo "Error! Fields not set!";
+			echo "</td>";
+			echo "<td><input type=\"button\" value=\"View\"/><input type=\"button\" value=\"Delete\"/></td>";
+			echo "</tr>";
 		}
+		echo "</tbody></table>";
 	}else{
-		echo "Error! Bad GET request!";
+		printf("Error: %s\n", mysqli_error($connection));
+		exit();
 	}
+
 }
 mysqli_close($connection);
 ?>

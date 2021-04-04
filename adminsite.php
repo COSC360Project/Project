@@ -27,7 +27,74 @@
 </article>
 <article id="center">
 <h1>Manage Site</h1>
+<?php
 
+include "db_info/db_credentials.php";
+
+$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+$error = mysqli_connect_error();
+if($error != null){
+  $output = "<p>Unable to connect to database!</p>";
+  exit($output);
+}else{
+	echo "<table><tbody>";
+	$sql = "SELECT COUNT(*) FROM blogpost";
+	$result = mysqli_query($connection, $sql);
+	if ($result) {
+		echo "<tr><td>";
+		$row = mysqli_fetch_assoc($result);
+		echo $row["COUNT(*)"];
+		mysqli_free_result($result);
+		echo " Posts</td>";
+		echo "</tr>";
+	}else{
+		printf("Error: %s\n", mysqli_error($connection));
+		exit();
+	}
+	$sql = "SELECT COUNT(*) FROM comment";
+	$result = mysqli_query($connection, $sql);
+	if ($result) {
+		echo "<tr><td>";
+		$row = mysqli_fetch_assoc($result);
+		echo $row["COUNT(*)"];
+		mysqli_free_result($result);
+		echo " Comments</td>";
+		echo "</tr>";
+	}else{
+		printf("Error: %s\n", mysqli_error($connection));
+		exit();
+	}
+	$sql = "SELECT COUNT(*) FROM userinfo";
+	$result = mysqli_query($connection, $sql);
+	if ($result) {
+		echo "<tr><td>";
+		$row = mysqli_fetch_assoc($result);
+		echo $row["COUNT(*)"];
+		mysqli_free_result($result);
+		echo " Users from ";
+		$countrysql = "SELECT COUNT(DISTINCT country) FROM userinfo";
+		$countryresult = mysqli_query($connection, $countrysql);
+		if ($countryresult) {
+			$countryrow = mysqli_fetch_assoc($countryresult);
+			echo $countryrow["COUNT(DISTINCT country)"];
+			mysqli_free_result($countryresult);
+			echo " Countries</td>";
+			echo "</tr>";
+		}else{
+		printf("Error: %s\n", mysqli_error($connection));
+		exit();
+	}
+		echo "</tr>";
+	}else{
+		printf("Error: %s\n", mysqli_error($connection));
+		exit();
+	}
+	echo "<td><input type=\"button\" value=\"Restore\"/><input type=\"button\" value=\"Delete\"/></td>";
+	echo "</tbody></table>";
+
+}
+mysqli_close($connection);
+?>
 </article>
 </div>
 

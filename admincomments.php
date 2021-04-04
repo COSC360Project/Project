@@ -27,6 +27,57 @@
 </article>
 <article id="center">
 <h1>Manage Comments</h1>
+<?php
+
+include "db_info/db_credentials.php";
+
+$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+$error = mysqli_connect_error();
+if($error != null){
+  $output = "<p>Unable to connect to database!</p>";
+  exit($output);
+}else{
+	$sql = "SELECT postid,authorid,content,date FROM comment";
+	$result = mysqli_query($connection, $sql);
+	if ($result) {
+		echo "<table><tbody>";
+		while($row = mysqli_fetch_assoc($result)){echo "<tr>";
+			echo "<td>";
+			$postid = $row["postid"];
+			$postsql = "SELECT title FROM blogpost WHERE postid = ".$postid;
+			$postresult = mysqli_query($connection, $postsql);
+				if ($postresult) {
+					$postrow = mysqli_fetch_assoc($postresult);
+					echo $postrow["title"];
+				}
+			mysqli_free_result($postresult);
+			echo "</td>";
+			echo "<td>".$row["content"]."</td>";
+			echo "<td>";
+			$authorid = $row["authorid"];
+			$authorsql = "SELECT username FROM userinfo WHERE authorid = ".$authorid;
+			$authorresult = mysqli_query($connection, $authorsql);
+				if ($authorresult) {
+					$authorrow = mysqli_fetch_assoc($authorresult);
+					echo $authorrow["username"];
+				}
+			mysqli_free_result($authorresult);
+			echo "</td>";
+			
+			echo "<td>".$row["date"]."</td>";
+			echo "<td><input type=\"button\" value=\"View\"/><input type=\"button\" value=\"Delete\"/></td>";
+			
+			echo "</tr>";
+		}
+		echo "</tbody></table>";
+	}else{
+		printf("Error: %s\n", mysqli_error($connection));
+		exit();
+	}
+
+}
+mysqli_close($connection);
+?>
 </article>
 </div>
 
