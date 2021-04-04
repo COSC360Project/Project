@@ -99,6 +99,15 @@ tbody td, tfoot td{
 	padding: 0.75em;
 }
 
+#userinfo{
+	width:25%;
+}
+
+#userinfo td{
+	text-align:left;
+	width:25%;
+}
+
 
 article#center h1{
 	margin: 10px 20px 5px 20px;
@@ -133,6 +142,17 @@ footer h2{
 	margin: 0px 0px 10px 0px;
 }
 
+.resize{
+	max-width:20em;
+	max-height:20em;
+	margin: 1em 1em 1em 3em;
+}
+
+#center table{
+	padding: 0;
+	margin: 1em 1em 1em 3em;
+}
+	
 /*REGISTRATION PAGE CSS */
 #register-page-body {
     background-color: #2e877e;

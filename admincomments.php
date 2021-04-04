@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -41,7 +44,8 @@ if($error != null){
 	$result = mysqli_query($connection, $sql);
 	if ($result) {
 		echo "<table><tbody>";
-		while($row = mysqli_fetch_assoc($result)){echo "<tr>";
+		while($row = mysqli_fetch_assoc($result)){
+			echo "<tr>";
 			echo "<td>";
 			$postid = $row["postid"];
 			$postsql = "SELECT title FROM blogpost WHERE postid = ".$postid;

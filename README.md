@@ -10,3 +10,6 @@ To setup and launch database:
 
 If you are having troubles connecting the database, this link might help:
 https://www.cloudways.com/blog/connect-mysql-with-php/
+
+
+Until we have the session variables set up on login, use 'dummysession.php' to set session variables. Session variables must be set for the header to work correctly.
