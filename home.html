@@ -7,30 +7,42 @@
     </head>
     <body id="home-body">
         <header id="home-header">
-            <h1 id="home-title">MyBlogPost</h1>
+            <h1>MyBlogPost</h1>
             <div class="topnav">
-                <input type="text" id="search-bar" placeholder="Search blog posts..">
-                <a href="register.html"><button type="button">Login / Register</button></a>
-                <!-- If logged in -->
+                <input type="text" style="float:left;" placeholder="Search blog posts..">
+                <button type="button" style="float:right;">Login / Register</button>
+                <!-- If logged in... -->
                 <button type="button" style="float:right;">Create Post</button>
-                <a href="" style="float:right;"><img id="avatar src=""></a>
+                <a href="" style="float:right;"><img id="avatar" src=""/></a> <!-- link to account info -->
             </div>
         </header>
-        <div id="featured-section-left">
-            <div class="post-entry">
-                <h2>POST TITLE</h2>
-                <p>&nbsp;by&nbsp;</p>
-                <h3>Username</h3>   
-                <!-- if logged in and is user's post, 'edit post' link -->
-                <a href="">(edit post)</a>  
-                <p>Lorem ipsum...</p>
-                <a href="commentpage.html">Continue reading...</a>      
-            </div>      
+        <div class="row">
+            <div id="featured-posts-left">
+                <div class="post-entry">
+                    <h2>POST TITLE &nbsp;by&nbsp; USERNAME</h2>
+                    <h5>Date posted</h5>
+                    <p>Lorem ipsum...</p>
+                </div>
+                <div class="post-entry">
+                    <h2>POST TITLE &nbsp;by&nbsp; USERNAME</h2>
+                    <h5>Date posted</h5>
+                    <p>Lorem ipsum...</p>
+                </div>
+                <div class="post-entry">
+                    <h2>POST TITLE &nbsp;by&nbsp; USERNAME</h2>
+                    <h5>Date posted</h5>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+            <div id="sidebar-right">
+                <h3>Search By:</h3>
+                <ul>
+                    <li><a href="">Date</a></li>
+                    <li><a href="">Category</a></li>
+                </ul>
+            </div>
         </div>
-        <div id="search-options-right">
-            
-        </div>
-        <footer>
+        <footer id="home-footer">
             <p>Footer stuff</p>
         </footer>
     </body>
