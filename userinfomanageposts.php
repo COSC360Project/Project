@@ -67,7 +67,7 @@ if($error != null){
 			echo "</td>";
 			echo "<td>".$row["date"]."</td>";
 			echo "<td>".$row["category"]."</td>";
-			echo "<td><input type=\"button\" value=\"View\"/><input type=\"button\" value=\"Delete\"/></td>";
+			echo "<td><input type=\"button\" value=\"View\"/><button class=\"deletebutton\" type=\"submit\" value=\"".$row["postid"]."\" name=\"username\"/>Delete</button></td>";
 			
 			echo "</tr>";
 		}
@@ -80,6 +80,25 @@ if($error != null){
 }
 mysqli_close($connection);
 ?>
+<script type="text/javascript">
+	var deletebutton = document.getElementsByClassName("deletebutton");
+	for (var i = 0; i < deletebutton.length; i++){
+		deletebutton[i].addEventListener('click', function(){
+		if (confirm("Are you sure you want to delete this Post? This action cannot be undone.")) {
+			var postid = this.value;
+			deletePost(postid);
+		}
+	});
+	}
+	function deletePost(postid){
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("POST", "deletepost.php", false);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("postid="+postid);
+		location.reload();
+	}
+
+</script>
 </article>
 </div>
 
