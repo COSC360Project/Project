@@ -10,10 +10,9 @@
             <h1>MyBlogPost</h1>
             <div class="topnav">
                 <input type="text" style="float:left;" placeholder="Search blog posts..">
-                <button type="button" style="float:right;">Login / Register</button>
-                <!-- If logged in... -->
-                <button type="button" style="float:right;">Create Post</button>
-                <a href="" style="float:right;"><img id="avatar" src=""/></a> <!-- link to account info -->
+                <?php
+                    include 'homeheader.php';
+                ?>
             </div>
         </header>
         <div class="row">
@@ -23,27 +22,35 @@
                     include 'db_info/db_credentials.php';
                     
                     // create connection
-                    $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n".$conn->error);
-
-                    // get post results from db
-                    $sql = "SELECT * FROM Blogpost ORDER BY date DESC";
-                    $result = mysqli_query($conn, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<div class='post-entry'>";
-                            echo "<h2>".$row['title']."&nbsp;by&nbsp;".$row['authorid']."</h2>";
-                            echo "<h5>Date posted:&nbsp;".$row['date']."</h5>";
-                            echo "<p>".$content."</p>";
-                            echo "</div>";
-                        }
+                    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+                    $error = mysqli_connect_error();
+                    if ($error != null) {
+                        $errmsg = "<p>Database connection failed</p>";
+                        exit($errmsg);
                     }
                     else {
-                        echo "<p>0 results returned.</p>";
+                        // get post results from db
+                        $sql = "SELECT * FROM blogpost ORDER BY date DESC";
+                        $result = mysqli_query($conn, $sql);
+                    
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<div class='post-entry'>";
+                                echo "<h2>".$row['title']."&nbsp;by&nbsp;".$row['authorid']."</h2>";
+                                echo "<h5>Date posted:&nbsp;".$row['date']."</h5>";
+                                echo "<p>".$content."</p>";
+                                echo "</div>";
+                            }
+                        }
+                        else {
+                            echo "<p>0 results returned.</p>";
+                            exit();
+                        }
                     }
-                    // close connection
+                   // close connection
                     $conn -> close();
                 ?>
-                <!--
+                <!--          
                 <div class="post-entry">
                     <h2>POST TITLE &nbsp;by&nbsp; USERNAME</h2>
                     <h5>Date posted</h5>
