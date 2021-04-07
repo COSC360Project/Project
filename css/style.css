@@ -115,9 +115,10 @@ article#center h1{
 }
 
 #home-header {
-    padding: 20px;
+    padding: 20px 20px;
     text-align: left;
     background-color: white;
+    display:inline-block;
 }
 #home-header h1 {
     font-size: 50px;
@@ -127,10 +128,18 @@ article#center h1{
     overflow: hidden;
     background-color: #474747;
 }
-#home-header input, #home-header button {
+#home-header a {
+    float: right;
     margin: 0.5em;
-    display: block;
     text-decoration: none;
+}
+#searchbar {
+    float: left;
+}
+#searchbar button {
+    margin: 0.5em 0.5em;
+    border: none;
+    cursor: pointer;
 }
 
 #featured-posts-left {
@@ -171,6 +180,7 @@ article#center h1{
     margin-top: 20px;
     background-color: #474747;
 }
+/*** ***/
 
 .footer-section{
 	margin: 30px 30px 0px 30px;
