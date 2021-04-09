@@ -30,8 +30,16 @@
             }
             else {
                 if(mysqli_num_rows($result) == 1){
+                    $sql2 = "SELECT status FROM Userinfo WHERE username = '$username' AND password = '$password' ";
+                    $result2 = mysqli_query($connection, $sql2);
+
+                     while ($row = mysqli_fetch_assoc($result2)){
+                        $status = $row['status'];
+                      }
+                    //ADD SESSIONS IF NEEDED
+                    $_SESSION["status"] = $status;
                     $_SESSION["username"] = $username;
-                    header("Location: home.html");
+                    header("Location: home.php");
                     exit;
                 }
                 else {

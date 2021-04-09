@@ -217,7 +217,7 @@ article#center h1{
     position: relative;
     z-index: 1;
     background: white;
-    max-width: 360px;
+    width: 380px;
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
@@ -234,7 +234,17 @@ fieldset {
     padding: 15px;
     box-sizing: border-box;
     font-size: 15px;
-    
+
+}
+.form select {
+    font-family: Tahoma, Helvetica, sans-serif;
+    outline: 1;
+    background: #f2f2f2;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 15px;
 }
 #registerbutton {
     font-family: Tahoma, Helvetica, sans-serif;
@@ -244,7 +254,7 @@ fieldset {
     border: 0;
     color: white;
     font-size: 15px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 #registerbutton:hover{
    background-color: #1f5742;
@@ -273,11 +283,11 @@ fieldset {
     font-family: Tahoma, Helvetica, sans-serif;
     text-transform: uppercase;
     background-color: #2e877e;
-    width: 100%;
+    width: 50%;
     border: 0;
     color: white;
     font-size: 15px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 #loginbutton:hover {
    background-color: #1f5742;
@@ -285,14 +295,6 @@ fieldset {
 #registerbutton:active {
     transform: scale(0.98)
 }
-.form .login-form {
+#login-form {
     display: none;
-}
-.login-form-error-message {
-    text-align: left;
-    font-size: 0.68rem;
-    margin-bottom: 2.5em;
-    margin-left: 2.5em;
-    font-family: Tahoma, Helvetica, sans-serif;
-    color: red;
 }

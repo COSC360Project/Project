@@ -50,9 +50,10 @@
                 else {
                     date_default_timezone_set('Canada/Vancouver');
                     $joindate = date("Y-m-d");
+                    $status = 0;
                    // md5($password);
 
-                    $sql3 = "INSERT INTO Userinfo(username,password,firstname,lastname,email,country,joindate) VALUES ('$username','$password','$firstname','$lastname','$email','$country','$joindate')";
+                    $sql3 = "INSERT INTO Userinfo(username,password,firstname,lastname,email,country,status,joindate) VALUES ('$username','$password','$firstname','$lastname','$email','$country','$status',$joindate')";
                     
                     $insert= mysqli_query($connection, $sql3);
 
@@ -62,9 +63,10 @@
 
                     }
                     else {
-
+                        // ADD SESSIONS IF NEEDED
                         $_SESSION["username"] = $username;
-                        header("Location: home.html");
+                        $_SESSION["status"] = $status;
+                        header("Location: home.php");
                         exit;
                     }
 
