@@ -34,12 +34,6 @@ header{
 	padding: 5px;
 }
 
-footer{
-	background-color: #474747;
-	color: white;
-	overflow: hidden;
-}
-
 article#right-sidebar{
 	float: left;
 	height: 50em;
@@ -100,7 +94,7 @@ tbody td, tfoot td{
 }
 
 #userinfo{
-	width:25%;
+	width:40%;
 }
 
 #userinfo td{
@@ -113,25 +107,80 @@ article#center h1{
 	margin: 10px 20px 5px 20px;
 }
 
-#home-header {
-    width: 100%;
-    display: inline-block;
-}
-#featured-section {
-    margin: auto;
-    padding: 5em 10em 5em 10em;
-    overflow: auto;
-}
-.post-entry {
-    margin: 2em;
-}
-.post-entry .info {
-    display: inline-flex;
+/** HOME PAGE CSS **/
+#home-body {
+    background-color: #2e877e;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-footer h2{
-	padding: 10px 0px 10px 0px;
+#home-header {
+    padding: 20px 20px;
+    text-align: left;
+    background-color: white;
+    display:inline-block;
 }
+#home-header h1 {
+    font-size: 50px;
+    margin: 0.2em;
+}
+#home-header .topnav {
+    overflow: hidden;
+    background-color: #474747;
+}
+#home-header a {
+    float: right;
+    margin: 0.5em;
+    text-decoration: none;
+}
+#searchbar {
+    float: left;
+}
+#searchbar button {
+    margin: 0.5em 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+#featured-posts-left {
+    margin: 10px;
+    float: left;
+    width: 75%;
+}
+.post-entry {
+    background-color: #AAA;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#sidebar-right {
+    float: left;
+    width: 20%;
+    margin: 10px;
+    padding: 0.5em;
+    background-color: white;
+}
+#sidebar-right a:hover {
+    background-color: grey;
+    color: black;
+}
+#sidebar-right > ul {
+    list-style-type: none;
+}
+
+.row:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+
+#home-footer {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #474747;
+}
+/*** ***/
 
 .footer-section{
 	margin: 30px 30px 0px 30px;

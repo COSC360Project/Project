@@ -46,38 +46,40 @@ if($error != null){
 	if ($result) {
 		echo "<table><tbody>";
 		while($row = mysqli_fetch_assoc($result)){echo "<tr>";
-			echo "<td>".$row["username"]."</td>";
-			echo "<td>".$row["country"]."</td>";
-			echo "<td>";
-			$authorid = $row["authorid"];
-			$postsql = "SELECT COUNT(*) FROM blogpost WHERE authorid = ".$authorid;
-			$postresult = mysqli_query($connection, $postsql);
-				if ($postresult) {
-					$postrow = mysqli_fetch_assoc($postresult);
-					echo $postrow["COUNT(*)"];
+			if(strcmp($row["username"],"[deleted-user]")!=0){
+				echo "<td>".$row["username"]."</td>";
+				echo "<td>".$row["country"]."</td>";
+				echo "<td>";
+				$authorid = $row["authorid"];
+				$postsql = "SELECT COUNT(*) FROM blogpost WHERE authorid = ".$authorid;
+				$postresult = mysqli_query($connection, $postsql);
+					if ($postresult) {
+						$postrow = mysqli_fetch_assoc($postresult);
+						echo $postrow["COUNT(*)"];
+					}
+				mysqli_free_result($postresult);
+				echo " Posts</td>";
+				echo "<td>";
+				$commentsql = "SELECT COUNT(*) FROM comment WHERE authorid = ".$authorid;
+				$commentresult = mysqli_query($connection, $commentsql);
+					if ($commentresult) {
+						$commentrow = mysqli_fetch_assoc($commentresult);
+						echo $commentrow["COUNT(*)"];
+					}
+				mysqli_free_result($commentresult);
+				echo " Comments</td>";
+				echo "<td>";
+				if ($row["status"] == 1){
+					echo "Administrator";
+				}else if ($row["status"] == 0){
+					echo "User";
+				}else if ($row["status"] == -1){
+					echo "Banned";
 				}
-			mysqli_free_result($postresult);
-			echo " Posts</td>";
-			echo "<td>";
-			$commentsql = "SELECT COUNT(*) FROM comment WHERE authorid = ".$authorid;
-			$commentresult = mysqli_query($connection, $commentsql);
-				if ($commentresult) {
-					$commentrow = mysqli_fetch_assoc($commentresult);
-					echo $commentrow["COUNT(*)"];
-				}
-			mysqli_free_result($commentresult);
-			echo " Comments</td>";
-			echo "<td>";
-			if ($row["status"] == 1){
-				echo "Administrator";
-			}else if ($row["status"] == 0){
-				echo "User";
-			}else if ($row["status"] == -1){
-				echo "Banned";
+				echo "</td>";
+				echo "<td><form method=\"get\" action=\"viewuser.php\"><button type=\"submit\" value=\"".$row["username"]."\" name=\"username\"/>View</button></form><button class=\"deletebutton\" type=\"submit\" value=\"".$row["username"]."\" name=\"username\"/>Delete</button></td>";
+				echo "</tr>";
 			}
-			echo "</td>";
-			echo "<td><input type=\"button\" value=\"View\"/><input type=\"button\" value=\"Delete\"/></td>";
-			echo "</tr>";
 		}
 		echo "</tbody></table>";
 	}else{
@@ -88,6 +90,28 @@ if($error != null){
 }
 mysqli_close($connection);
 ?>
+<script type="text/javascript">
+	var deletebutton = document.getElementsByClassName("deletebutton");
+	for (var i = 0; i < deletebutton.length; i++){
+		deletebutton[i].addEventListener('click', function(){
+		if (confirm("Are you sure you want to delete this user? This action cannot be undone.")) {
+			var username = this.value;
+			deleteuser(username);
+		}
+	});
+	}
+	function deleteuser(username){
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("POST", "deleteuser.php", false);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("username="+username);
+		location.reload();
+
+		
+		
+	}
+
+</script>
 </article>
 </div>
 

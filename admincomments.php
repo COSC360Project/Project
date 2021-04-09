@@ -40,7 +40,7 @@ if($error != null){
   $output = "<p>Unable to connect to database!</p>";
   exit($output);
 }else{
-	$sql = "SELECT postid,authorid,content,date FROM comment";
+	$sql = "SELECT commentid,postid,authorid,content,date FROM comment";
 	$result = mysqli_query($connection, $sql);
 	if ($result) {
 		echo "<table><tbody>";
@@ -69,7 +69,7 @@ if($error != null){
 			echo "</td>";
 			
 			echo "<td>".$row["date"]."</td>";
-			echo "<td><input type=\"button\" value=\"View\"/><input type=\"button\" value=\"Delete\"/></td>";
+			echo "<td><input type=\"button\" value=\"View\"/><button class=\"deletebutton\" type=\"submit\" value=\"".$row["commentid"]."\" name=\"username\"/>Delete</button></td>";
 			
 			echo "</tr>";
 		}
@@ -82,6 +82,25 @@ if($error != null){
 }
 mysqli_close($connection);
 ?>
+<script type="text/javascript">
+	var deletebutton = document.getElementsByClassName("deletebutton");
+	for (var i = 0; i < deletebutton.length; i++){
+		deletebutton[i].addEventListener('click', function(){
+		if (confirm("Are you sure you want to delete this Comment? This action cannot be undone.")) {
+			var commentid = this.value;
+			deleteComment(commentid);
+		}
+	});
+	}
+	function deleteComment(commentid){
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("POST", "deletecomment.php", false);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("commentid="+commentid);
+		location.reload();
+	}
+
+</script>
 </article>
 </div>
 
