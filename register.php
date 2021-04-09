@@ -48,7 +48,7 @@
                 }
 
                 else {
-                    date_default_timezone_set('Canada/Vancouver');
+                   // date_default_timezone_set('Canada/Vancouver');
                     $joindate = date("Y-m-d");
                     $status = 0;
                    // md5($password);
