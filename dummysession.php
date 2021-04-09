@@ -22,5 +22,8 @@ if($error != null){
 		$_SESSION["status"] = $row["status"];
 		echo $_SESSION["status"];
 	}
+	
 }
+
+//session_unset();
 ?>
