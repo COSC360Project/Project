@@ -15,11 +15,12 @@ if($error != null){
 }else{
 	
 
-	$sql = "SELECT status FROM userinfo WHERE username='".$_SESSION["username"]."'";
+	$sql = "SELECT status,imageURL FROM userinfo WHERE username='".$_SESSION["username"]."'";
 	$result = mysqli_query($connection, $sql);
 	if ($result) {
 		$row = mysqli_fetch_assoc($result);
 		$_SESSION["status"] = $row["status"];
+		$_SESSION["imageurl"] = $row["imageURL"];
 		echo $_SESSION["status"];
 	}
 	
