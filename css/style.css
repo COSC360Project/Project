@@ -119,6 +119,8 @@ article#center h1{
     text-align: left;
     background-color: white;
     display:inline-block;
+    height: fit-content;
+    width: 90%;
 }
 #home-header h1 {
     font-size: 50px;
@@ -130,17 +132,19 @@ article#center h1{
 }
 #home-header a {
     float: right;
-    margin: 0.5em;
     text-decoration: none;
+    margin: 0.5em;
+}
+.topnav button {
+    margin: 0.5em;
+    cursor: pointer;
 }
 #searchbar {
     float: left;
-}
-#searchbar button {
+    display: block;
     margin: 0.5em 0.5em;
-    border: none;
-    cursor: pointer;
 }
+
 
 #featured-posts-left {
     margin: 10px;
@@ -166,6 +170,9 @@ article#center h1{
 }
 #sidebar-right > ul {
     list-style-type: none;
+}
+#sidebar-right input {
+    margin: 0.5em;
 }
 
 .row:after {
