@@ -1,5 +1,5 @@
-<?php 
-session_start();
+<?php
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,8 +14,8 @@ session_start();
             <h1>MyBlogPost</h1>
             <div class="topnav">
                 <form id="searchbar" method="post" action="displayposts.php">
-                    <input type="text" name="search-keyword" placeholder="Search blog posts.." required="required"/>
-                    <button type="submit" name="search"><i class="fa fa-search"></i></button>
+                    <input type="text" id="search-keyword" placeholder="Search blog posts.." required="required"/>
+                    <button type="submit" id="search"><i class="fa fa-search"></i></button>
                 </form>
                 <?php
                     include 'homeheader.php';
@@ -38,8 +38,6 @@ session_start();
             </div>
             <div id="sidebar-right">
                 <h3>Search By:</h3>
-                <form method="post">
-
                 </form method='post' action='displayposts.php'>
                     <input type="submit" name="date" value="Date"/>
                     <input type="submit" name="category" value="Category"/>

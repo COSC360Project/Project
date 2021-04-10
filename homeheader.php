@@ -20,10 +20,10 @@
             echo "<a href='adminsite.php'>";
             echo "<button type='button'>Admin Page</button>";
             echo "</a>";
-        }
-        // For unregistered users / users not logged in 
-        else {
-            echo "<a href='register.html'><button type='button'>Login / Register</button></a>";
-        }
+        } 
+    }
+    // For unregistered users / users not logged in
+    else {
+        echo "<a href='register.html'><button type='button'>Login / Register</button></a>";;
     }
 ?>    
