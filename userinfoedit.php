@@ -79,14 +79,15 @@ mysqli_close($connection);
 		var newemail = editinfo[3].value;
 		var newcountry = editinfo[4].value;
 		var username = document.getElementById("name").innerHTML;
-		var xhttp = new XMLHttpRequest();
-		xhttp.open("POST", "edituser.php", false);
-		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhttp.send("username="+username+"&imageURL="+newimgURL+"&firstName="+newfname+"&lastName="+newlname+"&email="+newemail+"&country="+newcountry);
-		location.reload();
-
-		
-		
+		if(editinfo == "" || newimgURL =="" || newfname =="" || newlname =="" || newemail =="" || newcountry ==""){
+			alert("Please fill in all fields.");
+		}else{
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "edituser.php", false);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("username="+username+"&imageURL="+newimgURL+"&firstName="+newfname+"&lastName="+newlname+"&email="+newemail+"&country="+newcountry);
+			location.reload();
+		}
 	});
 
 </script>
