@@ -4,8 +4,10 @@ html, body, header, footer, hgroup, nav, article, section, figure, figcaption, h
 	font-size: 100%;
 	vertical-align: baseline;
 	border: 0;
+    }
+body {
+    width: 100%;
 }
-
 html{
 	font-family: Tahoma, Helvetica, sans-serif;
 }
@@ -297,4 +299,12 @@ fieldset {
 }
 #login-form {
     display: none;
+}
+#main {
+width: 100%;
+}
+
+#createpost {
+    width: 100%;
+    margin: auto;
 }
