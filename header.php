@@ -36,7 +36,7 @@
 			echo "<td><a href=\"#\"></a></td>";
 			echo "<td><a href=\"#\"></a></td>";
 			echo "<td><a href=\"#\"></a></td>";
-			echo "<td><a href=\"register.html\">Login/Register</a></td>";
+			echo "<td><a href=\"signup.html\">Login/Register</a></td>";
 			echo "</tr></tbody></table>";
 		}
 	}else{
@@ -48,7 +48,7 @@
 		echo "<td><a href=\"#\"></a></td>";
 		echo "<td><a href=\"#\"></a></td>";
 		echo "<td><a href=\"#\"></a></td>";
-		echo "<td><a href=\"register.html\">Login/Register</a></td>";
+		echo "<td><a href=\"signup.html\">Login/Register</a></td>";
 		echo "</tr></tbody></table>";
 	}
 ?>
