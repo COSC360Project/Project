@@ -24,6 +24,6 @@
     }
     // For unregistered users / users not logged in
     else {
-        echo "<a href='register.html'><button type='button'>Login / Register</button></a>";;
+        echo "<a href='signup.html'><button type='button'>Login / Register</button></a>";;
     }
 ?>    
