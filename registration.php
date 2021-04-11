@@ -54,11 +54,8 @@
             else {
 
                 if(mysqli_num_rows($result) >= 1 || mysqli_num_rows($result2) >= 1){
-<<<<<<< HEAD:registration.php
-                    header("Location: signup.php");
-=======
+
                     header("Location: signup.html");
->>>>>>> dab95dc66296ea21e5389fb87b9f1d5769ec7ae8:signup.php
                     exit;
                 }
 
