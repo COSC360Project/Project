@@ -50,9 +50,13 @@
                     exit;
                 }
                 else {
+<<<<<<< HEAD
                     $_SESSION["error"] = "Your username and/or password is invalid";
 
                     header("Location: signup.php");
+=======
+                    header("Location: signup.html");
+>>>>>>> dab95dc66296ea21e5389fb87b9f1d5769ec7ae8
                     exit;
                 }
             }
