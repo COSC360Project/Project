@@ -38,7 +38,7 @@
             </div>
             <div id="sidebar-right">
                 <h3>Search By:</h3>
-                </form method='post' action='displayposts.php'>
+                <form method='post' action='displayposts.php'>
                     <input type="submit" name="date" value="Date"/>
                     <input type="submit" name="category" value="Category"/>
                 </form>
