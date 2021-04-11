@@ -92,25 +92,12 @@ if($error != null){
 		printf("Error: %s\n", mysqli_error($connection));
 		exit();
 	}
-	echo "<td><input type=\"button\" id=\"restore\" value=\"Restore\"/><input type=\"button\" value=\"Delete\"/></td>";
+	echo "<td><input type=\"button\" value=\"Delete\"/></td>";
 	echo "</tbody></table>";
 
 }
 mysqli_close($connection);
 ?>
-<script type="text/javascript">
-	var restorebutton = document.getElementById("restore");
-	restorebutton.addEventListener('click', function(){
-	if (confirm("Are you sure you want to restore the database? This action cannot be undone.")) {
-		var xhttp = new XMLHttpRequest();
-		xhttp.open("POST", "db_info/restoredb.php", false);
-		xhttp.send();
-		location.reload();
-	}
-	});
-
-
-</script>
 </article>
 </div>
 
