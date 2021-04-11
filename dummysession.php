@@ -1,9 +1,10 @@
 <?php
 
 session_start();
-$_SESSION["username"] = "catlover24"; //admin
+//$_SESSION["username"] = "catlover24"; //admin
 //$_SESSION["username"] = "football2005"; //user
 //$_SESSION["username"] = "hacker-man72"; //banned
+$_SESSION["username"] = "dsmith72";
 
 include "db_info/db_credentials.php";
 

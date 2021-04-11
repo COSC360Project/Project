@@ -34,7 +34,7 @@ CREATE TABLE `Userinfo` (
 	`lastname` VARCHAR(255) NOT NULL,
 	`email` VARCHAR(255) NOT NULL,
 	`country` VARCHAR(255),
-	`imageURL` VARCHAR(255),
+	`imageURL` VARCHAR(255) DEFAULT "images/default-avatar-icon.png",
 	`status` INTEGER DEFAULT 0,
 	`joindate` DATE NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

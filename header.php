@@ -17,8 +17,8 @@
 		}else if($status == 0){
 			//User header
 			echo "<h1>MyBlogPost</h1>";
-
-			echo "<table><tbody><tr>";
+			echo "<article id=\"right-icon\"><img class=\"thumbnail\" src='".$_SESSION["imageurl"]."'/></article>";
+			echo "<table id=\"box\"><tbody><tr>";
 			echo "<td><a href=\"home.php\">Home</a></td>";
 			echo "<td><a href=\"#\">My Posts</a></td>";
 			echo "<td><a href=\"#\">New Post</a></td>";
@@ -30,7 +30,7 @@
 			//banned user, unregistered user header
 			echo "<h1>MyBlogPost</h1>";
 
-			echo "<table><tbody><tr>";
+			echo "<table id=\"box\"><tbody><tr>";
 			echo "<td><a href=\"home.php\">Home</a></td>";
 			echo "<td><a href=\"#\"></a></td>";
 			echo "<td><a href=\"#\"></a></td>";
@@ -42,7 +42,7 @@
 	}else{
 		echo "<h1>MyBlogPost</h1>";
 
-		echo "<table><tbody><tr>";
+		echo "<table id=\"box\"><tbody><tr>";
 		echo "<td><a href=\"home.php\">Home</a></td>";
 		echo "<td><a href=\"#\"></a></td>";
 		echo "<td><a href=\"#\"></a></td>";
