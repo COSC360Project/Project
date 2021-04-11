@@ -11,6 +11,7 @@
             if(isset($_POST["username"]) && isset($_POST["password"])){
                 $username = $_POST["username"];
                 $password = $_POST["password"];
+                $newpassword = md5($password);
             }
         }
         
@@ -27,7 +28,7 @@
        
         
         else {
-            $sql = "SELECT username, password FROM Userinfo WHERE username = '$username' AND password = '$password' ";
+            $sql = "SELECT username, password FROM Userinfo WHERE username = '$username' AND password = '$newpassword' ";
             $result = mysqli_query($connection, $sql);
             
             if(!$result){
@@ -35,7 +36,7 @@
             }
             else {
                 if(mysqli_num_rows($result) == 1){
-                    $sql2 = "SELECT status, imageURL FROM Userinfo WHERE username = '$username' AND password = '$password' ";
+                    $sql2 = "SELECT status, imageURL FROM Userinfo WHERE username = '$username' AND password = '$newpassword' ";
                     $result2 = mysqli_query($connection, $sql2);
 
                      while ($row = mysqli_fetch_assoc($result2)){
@@ -50,18 +51,17 @@
                     exit;
                 }
                 else {
-<<<<<<< HEAD
-                    $_SESSION["error"] = "Your username and/or password is invalid";
 
-                    header("Location: signup.php");
-=======
+                   // $_SESSION["error"] = "Your username and/or password is invalid";
+
                     header("Location: signup.html");
->>>>>>> dab95dc66296ea21e5389fb87b9f1d5769ec7ae8
+
                     exit;
                 }
             }
 
             mysqli_free_result($result);
+            mysqli_free_result($result2);
             mysqli_close($connection);
         }
     ?>
