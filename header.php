@@ -29,7 +29,7 @@
 		}else if($status == -1){
 			//banned user, unregistered user header
 			echo "<h1>MyBlogPost</h1>";
-
+			echo "<article id=\"right-icon\"><img class=\"thumbnail\" src='images/blank.png'/></article>";
 			echo "<table id=\"box\"><tbody><tr>";
 			echo "<td><a href=\"home.php\">Home</a></td>";
 			echo "<td><a href=\"#\"></a></td>";
@@ -41,7 +41,7 @@
 		}
 	}else{
 		echo "<h1>MyBlogPost</h1>";
-
+		echo "<article id=\"right-icon\"><img class=\"thumbnail\" src='images/blank.png'/></article>";
 		echo "<table id=\"box\"><tbody><tr>";
 		echo "<td><a href=\"home.php\">Home</a></td>";
 		echo "<td><a href=\"#\"></a></td>";
