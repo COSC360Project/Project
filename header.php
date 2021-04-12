@@ -36,7 +36,7 @@
 			echo "<td><a href=\"#\"></a></td>";
 			echo "<td><a href=\"#\"></a></td>";
 			echo "<td><a href=\"#\"></a></td>";
-			echo "<td><a href=\"signup.html\">Login/Register</a></td>";
+			echo "<td><a href=\"signup.php\">Login/Register</a></td>";
 			echo "</tr></tbody></table>";
 		}
 	}else{

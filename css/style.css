@@ -248,6 +248,18 @@ article#right-icon{
 #register-page-body {
     background-color: #2e877e;
 
+
+}
+
+span {
+    font-family: Tahoma, Helvetica, sans-serif;
+    font-size: 15px;
+    color: red;
+    position: relative;
+    z-index: 1;
+    left: 500px;
+    top: 20px;
+
 }
 
 .register-page {
@@ -255,8 +267,17 @@ article#right-icon{
     padding: 10% 0 0;
     margin: auto;
 }
+.register-page h1 {
+    font-family: Tahoma, Helvetica, sans-serif;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+    left: 10px;
+}
 .form {
     position: relative;
+    right: 40px;
     z-index: 1;
     background: white;
     width: 380px;
@@ -266,6 +287,13 @@ article#right-icon{
 }
 fieldset {
     border: 0;
+}
+.form h2 {
+    font-family: Tahoma, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #2e877e;
+    padding: 15px;
+    margin: 0 0 15px;
 }
 .form input {
     font-family: Tahoma, Helvetica, sans-serif;

@@ -1,4 +1,6 @@
-
+<?php
+    session_start()
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,10 +9,27 @@
         <link rel=stylesheet href="css/style.css">
     </head>
     <body id="register-page-body">
+        <?php
+            if($_SESSION["login-error"] == true){
+                echo '<span>'.$_SESSION["login-error-message"].'</span>';
+            }
+            elseif($_SESSION["login-error"] == false){
+                echo '<span> </span>';
+            }
 
+            if($_SESSION["register-error"] == true){
+                echo '<span>'.$_SESSION["register-error-message"].'</span>';
+            }
+            elseif($_SESSION["register-error"] == false){
+                echo '<span> </span>';
+            }
+
+        ?>
         <div class="register-page">
+            <h1>Welcome to MyBlogPost</h1>
             <div class="form">
                 <form id="register-form" method="post" action="registration.php">
+                    <h2>REGISTER HERE</h2>
                     <fieldset>
                         <input type="text" id="firstname-register" name="firstname" autofocus placeholder="First Name" class="register-required"/>
                         <input type="text" id="lastname-register" name="lastname" autofocus placeholder="Last Name" class="register-required"/>
@@ -275,6 +294,7 @@
 
 
                 <form id="login-form" method="post" action="login.php">
+                    <h2>Login</h2>
                     <fieldset>
                         <input type="text" id="username-login" name="username" autofocus placeholder="username" class="login-required" />
                         <input type="password" id="password-login" name="password" autofocus placeholder = "password" class="login-required"/>

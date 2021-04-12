@@ -39,6 +39,21 @@ function checkPasswordMatch(e){
      }
   }
 
+function verifyPassword(e){
+    var passwordField = document.getElementById("password-register");
+    var password = passwordField.value;
+    var err = false;
+
+    if(password.length < 8){
+        err = true;
+    }
+    if(err == true){
+        window.alert("Password length must be at least 8 characters");
+        e.preventDefault();
+    }
+
+}
+
 document.getElementById("register-form").onsubmit = function(e){
     var required = document.querySelectorAll(".register-required");
     var error = false;
@@ -57,6 +72,7 @@ document.getElementById("register-form").onsubmit = function(e){
         e.preventDefault()
     }
     else {
+        verifyPassword(e);
         checkPasswordMatch(e);
     }
 }

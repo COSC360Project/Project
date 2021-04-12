@@ -14,7 +14,10 @@
                 $newpassword = md5($password);
             }
         }
-        
+        //default value
+        $_SESSION["login-error"] = false;
+
+
         include "db_info/db_credentials.php";
         
         $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
@@ -44,6 +47,7 @@
                         $imageURL = $row['imageURL'];
                       }
                     //ADD SESSIONS IF NEEDED
+                    $_SESSION["login-error"] = false;
                     $_SESSION["status"] = $status;
                     $_SESSION["imageURL"] = $imageURL;
                     $_SESSION["username"] = $username;
@@ -52,9 +56,9 @@
                 }
                 else {
 
-                   // $_SESSION["error"] = "Your username and/or password is invalid";
-
-                    header("Location: signup.html");
+                   $_SESSION["login-error"] = true;
+                   $_SESSION["login-error-message"] = "Your username and/or password is invalid";
+                   header("Location: signup.php");
 
                     exit;
                 }

@@ -28,6 +28,10 @@
             }
         }
 
+        //default value
+        $_SESSION["register-error"] = false;
+
+
         include "db_info/db_credentials.php";
         $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
         $error = mysqli_connect_error();
@@ -54,8 +58,9 @@
             else {
 
                 if(mysqli_num_rows($result) >= 1 || mysqli_num_rows($result2) >= 1){
-
-                    header("Location: signup.html");
+                    $_SESSION["register-error"] = true;
+                    $_SESSION["register-error-message"] = "User already exists with this name and/or email";
+                    header("Location: signup.php");
                     exit;
                 }
 
@@ -80,6 +85,7 @@
                     }
                     else {
                         // ADD SESSIONS IF NEEDED
+                        $_SESSION["register-error"] = false;
                         $_SESSION["username"] = $username;
                         $_SESSION["status"] = $status;
 						$_SESSION["imageurl"] = "images/default-avatar-icon.png";
