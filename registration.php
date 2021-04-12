@@ -82,6 +82,7 @@
                         // ADD SESSIONS IF NEEDED
                         $_SESSION["username"] = $username;
                         $_SESSION["status"] = $status;
+						$_SESSION["imageurl"] = "images/default-avatar-icon.png";
                         header("Location: home.php");
                         exit;
                     }
