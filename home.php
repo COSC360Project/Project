@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,16 +10,15 @@
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body id="home-body">
-        <header id="home-header">
-            <h1>MyBlogPost</h1>
+        <header id="home-header" name="top">
+            <?php
+                include 'header.php';
+            ?>
             <div class="topnav">
                 <form id="searchbar" method="post" action="displayposts.php">
                     <input type="text" id="search-keyword" placeholder="Search blog posts.." required="required"/>
                     <button type="submit" id="search"><i class="fa fa-search"></i></button>
                 </form>
-                <?php
-                    include 'homeheader.php';
-                ?>
             </div>
         </header>
         <div class="row">
@@ -45,7 +44,7 @@
             </div>
         </div>
         <footer id="home-footer">
-            <p>Footer stuff</p>
+            <p><a href="#top">Return to top of page</a></p>
         </footer>
     </body>
 </html>
