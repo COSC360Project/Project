@@ -169,9 +169,13 @@ article#right-icon{
     background-color: #474747;
 }
 #home-header a {
+    color: white;
     float: right;
     text-decoration: none;
     margin: 0.5em;
+}
+#home-header a:hover {
+    color: lightseagreen;
 }
 .topnav button {
     margin: 0.5em;
