@@ -1,5 +1,4 @@
 <?php
-	Header ("Content-type: text/css; charset=utf-8");
 	if (isset($_SESSION["status"])){
 		$status = $_SESSION["status"];
 		if ($status == 1){
