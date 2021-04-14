@@ -36,9 +36,8 @@ session_start();
 
 include "db_info/db_credentials.php";
 $username = $_SESSION["username"];
-echo "<style> p {text-align:center; padding:0.5em;} </style>";
-echo "<p>Are you sure you want to delete your account? This action cannot be undone.</p>";
-echo "<p><button class=\"deletebutton\" type=\"submit\" value=\"".$username."\" name=\"username\"/>Delete</button></p>";
+echo "<p id=\"deleteuser\">Are you sure you want to delete your account? This action cannot be undone.</p>";
+echo "<p id=\"deleteuser\"><button class=\"deletebutton\" type=\"submit\" value=\"".$username."\" name=\"username\"/>Delete</button></p>";
 
 ?>
 <script type="text/javascript">

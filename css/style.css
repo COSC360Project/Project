@@ -156,6 +156,11 @@ article#center form{
 	margin: 10px 20px 5px 20px;
 }
 
+#deleteuser{
+	text-align:center; 
+	padding:0.5em;
+}
+
 
 /** HOME PAGE CSS **/
 #home-body {
