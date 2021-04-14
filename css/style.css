@@ -104,6 +104,10 @@ tbody td, tfoot td{
 	padding: 0.75em;
 }
 
+header tbody td, tfoot td{
+	padding: 0.25em;
+}
+
 #userinfo{
 	width:40%;
 }
@@ -190,7 +194,6 @@ article#center form{
     cursor: pointer;
 }
 #searchbar {
-    float: left;
     display: block;
     margin: 0.5em 0.5em;
 }
