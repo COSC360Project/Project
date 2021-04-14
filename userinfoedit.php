@@ -23,6 +23,7 @@ session_start();
 	<tbody>
 		<tr><td><a href="userinfo.php">User Profile</a></td></tr>
 		<tr><td><a href="userinfoedit.php">Edit User Information</a></td></tr>
+		<tr><td><a href="changepassword.php">Change Password</a></td></tr>
 		<tr><td><a href="userinfomanageposts.php">Manage Posts</a></td></tr>
 		<tr><td><a href="userinfodelete.php">Delete User</a></td></tr>
 	</tbody>

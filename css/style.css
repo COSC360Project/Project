@@ -114,7 +114,7 @@ tbody td, tfoot td{
 }
 
 
-article#center h1{
+article#center h1, p{
 	margin: 10px 20px 5px 20px;
 }
 
@@ -131,6 +131,10 @@ article#center h1{
 	color: white;
 }
 
+#masthead h1 a{
+	color: black;
+}
+
 .thumbnail{
 	width:3em;
 	height:3em;
@@ -142,6 +146,10 @@ article#right-icon{
 	float: right;
 	padding: 0.5em 0.5em 0em 0em;
 
+}
+
+article#center form{
+	margin: 10px 20px 5px 20px;
 }
 
 
