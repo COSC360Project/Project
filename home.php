@@ -9,17 +9,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css"/>
     </head>
-    <body id="home-body">
-        <header id="home-header" name="top">
+    <body>
+        <header id="masthead" name="top">
             <?php
                 include 'header.php';
             ?>
-            <div class="topnav">
-                <form id="searchbar" method="post" action="displayposts.php">
-                    <input type="text" id="search-keyword" placeholder="Search blog posts.." required="required"/>
-                    <button type="submit" id="search"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
         </header>
         <div class="row">
             <div id="featured-posts-left">
@@ -43,8 +37,10 @@
                 </form>
             </div>
         </div>
-        <footer id="home-footer">
-            <p><a href="#top">Return to top of page</a></p>
+        <footer>
+         <?php
+                include 'footer.html';
+         ?>
         </footer>
     </body>
 </html>
