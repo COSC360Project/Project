@@ -104,6 +104,10 @@ tbody td, tfoot td{
 	padding: 0.75em;
 }
 
+header tbody td, tfoot td{
+	padding: 0.25em;
+}
+
 #userinfo{
 	width:40%;
 }
@@ -114,7 +118,7 @@ tbody td, tfoot td{
 }
 
 
-article#center h1{
+article#center h1, p{
 	margin: 10px 20px 5px 20px;
 }
 
@@ -131,6 +135,10 @@ article#center h1{
 	color: white;
 }
 
+#masthead h1 a{
+	color: black;
+}
+
 .thumbnail{
 	width:3em;
 	height:3em;
@@ -142,6 +150,15 @@ article#right-icon{
 	float: right;
 	padding: 0.5em 0.5em 0em 0em;
 
+}
+
+article#center form{
+	margin: 10px 20px 5px 20px;
+}
+
+#deleteuser{
+	text-align:center; 
+	padding:0.5em;
 }
 
 
@@ -225,12 +242,17 @@ article#right-icon{
 /*** ***/
 
 .footer-section{
-	margin: 30px 30px 0px 30px;
-	border-top: solid 1pt #ff8800;
+	text-align: center;
+	background-color: #474747;
+	padding: 10px 0px 35px 0px;
 }
 
 .footer-section p{
 	margin: 0px 0px 10px 0px;
+}
+
+.footer-section h2{
+	padding: 20px 0px 10px 0px;
 }
 
 .resize{
@@ -254,7 +276,7 @@ span {
     color: red;
     position: relative;
     z-index: 1;
-    left: 500px;
+    left: 510px;
     top: 20px;
 
 }
@@ -274,7 +296,7 @@ span {
 }
 .form {
     position: relative;
-    right: 40px;
+    right: 47px;
     z-index: 1;
     background: white;
     width: 380px;
@@ -312,6 +334,10 @@ fieldset {
     padding: 15px;
     box-sizing: border-box;
     font-size: 15px;
+}
+input::-webkit-input-placeholder {
+    font-size: 10.4px;
+    line-height: 3;
 }
 #registerbutton {
     font-family: Tahoma, Helvetica, sans-serif;
@@ -365,6 +391,7 @@ fieldset {
 #login-form {
     display: none;
 }
+/*--------------------*/
 #main {
 width: 100%;
 }
@@ -372,4 +399,16 @@ width: 100%;
 #createpost {
     width: 100%;
     margin: auto;
+}
+/*-------------------*/
+
+@media screen and (max-width: 375px){
+    form{
+        max-width: 100%;
+    }
+}
+@media screen and (min-width: 1024px){
+    form{
+       max-width: 200%;
+    }
 }

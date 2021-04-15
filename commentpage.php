@@ -49,6 +49,7 @@ session_start();
 -->
 </div>
 <?php
+include "db_info/db_credentials.php";
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
 $error = mysqli_connect_error();
 if($error != null){

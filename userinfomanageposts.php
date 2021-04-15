@@ -7,6 +7,7 @@ session_start();
    <meta charset="utf-8">
    <title>MyBlogPost</title>
    <link rel="stylesheet" href="css/style.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -23,6 +24,7 @@ session_start();
 	<tbody>
 		<tr><td><a href="userinfo.php">User Profile</a></td></tr>
 		<tr><td><a href="userinfoedit.php">Edit User Information</a></td></tr>
+		<tr><td><a href="changepassword.php">Change Password</a></td></tr>
 		<tr><td><a href="userinfomanageposts.php">Manage Posts</a></td></tr>
 		<tr><td><a href="userinfodelete.php">Delete User</a></td></tr>
 	</tbody>

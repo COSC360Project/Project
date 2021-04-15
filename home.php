@@ -11,15 +11,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/searchposts.js"></script>
     </head>
-    <body id="home-body">
-        <header id="home-header" name="top">
+    <body>
+        <header id="masthead" name="top">
             <?php
                 include 'header.php';
             ?>                
         </header>
         <div id="topsearch">
             <input type="text" id="search-keyword" placeholder="Search blog posts.." required="required"/>
-            <button type="submit" id="search" onclick="js/asearchposts.js"><i class="fa fa-search"></i></button>
+            <button type="submit" id="search" onclick="js/searchposts.js"><i class="fa fa-search"></i></button>
         </div>
         <div class="row">
             <div id="featured-posts-left">
@@ -43,8 +43,10 @@
                 </form>
             </div>
         </div>
-        <footer id="home-footer">
-            <p><a href="#top">Return to top of page</a></p>
+        <footer>
+         <?php
+                include 'footer.html';
+         ?>
         </footer>
     </body>
 </html>

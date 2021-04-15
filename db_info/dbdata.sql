@@ -62,12 +62,12 @@ CREATE TABLE `Comment` (
 
 
 
-INSERT INTO `Userinfo`(`username`,`password`,`firstname`,`lastname`,`email`,`country`,`imageURL`,`status`,`joindate`) VALUES ("catlover24","kittykat1995","Elise","Walker","ewalker24@gmail.com","Canada","images/user1.jpg", 1,"2018-01-11");
-INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,joindate) VALUES ("football2005","password123","Brett","Anderson","fb4lyfe@gmail.com","Ireland","images/user2.jpg","2019-12-17");
-INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,joindate) VALUES ("gremlin_04","pAsSwOrD12345","Tom","Smith","gremlin04@gmail.com","Canada","images/user3.jpg","2018-02-01");
-INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,joindate) VALUES ("validpizza12","secret123","Ellie","Page","elliep23@mail.com","United Kingdom","images/user4.jpg","2020-06-24");
-INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,joindate) VALUES ("SDK-45","s0m3p@$$w0rd","Sam","Lee","samlee1990@gmail.com","Taiwan","images/user5.jpg","2020-03-16");
-INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,status,joindate) VALUES ("hacker-man72","piZZa389!","John","Smith","hackman72@hotmail.com","Madagascar","images/user6.jpg",-1,"2021-02-01");
+INSERT INTO `Userinfo`(`username`,`password`,`firstname`,`lastname`,`email`,`country`,`imageURL`,`status`,`joindate`) VALUES ("catlover24","ebacfb56152925523a86675c6fb9b8e8","Elise","Walker","ewalker24@gmail.com","Canada","images/user1.jpg", 1,"2018-01-11");
+INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,joindate) VALUES ("football2005","482c811da5d5b4bc6d497ffa98491e38","Brett","Anderson","fb4lyfe@gmail.com","Ireland","images/user2.jpg","2019-12-17");
+INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,joindate) VALUES ("gremlin_04","09a65a49fb6d48f2e5b6fa8369d6d02e","Tom","Smith","gremlin04@gmail.com","Canada","images/user3.jpg","2018-02-01");
+INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,joindate) VALUES ("validpizza12","5d7845ac6ee7cfffafc5fe5f35cf666d","Ellie","Page","elliep23@mail.com","United Kingdom","images/user4.jpg","2020-06-24");
+INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,joindate) VALUES ("SDK-45","63b4a4cbd81684706066e6b255ea11ba","Sam","Lee","samlee1990@gmail.com","Taiwan","images/user5.jpg","2020-03-16");
+INSERT INTO Userinfo(username,password,firstname,lastname,email,country,imageURL,status,joindate) VALUES ("hacker-man72","beabfedc62871300e88c6dc33e242092","John","Smith","hackman72@hotmail.com","Madagascar","images/user6.jpg",-1,"2021-02-01");
 INSERT INTO Blogpost(authorid,title,content,date,category) VALUES (1,"Welcome to MyBlogPost!","Hello Everyone! My name is Elise, and this is MyBlogPost. Please be kind and respectful! :)","2018-01-17","Off Topic");
 INSERT INTO Blogpost(authorid,title,content,date,category) VALUES (2,"Football Playoffs","I scored a touchdown today at the big football playoffs. Everyone cheered. I was amazing. -Brett","2020-03-17","Sports");
 INSERT INTO Blogpost(authorid,title,content,date,category) VALUES (3,"Alien sighting!","I think I saw a UFO today. It was a dark and stormy night. I was sitting at my window and there it was!","2018-02-11","Life");

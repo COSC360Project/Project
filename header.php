@@ -12,6 +12,11 @@
 			echo "<td><a href=\"adminsite.php\">Administrator</a></td>";
 			echo "<td><a href=\"userinfo.php\">My Account</a></td>";
 			echo "<td><a href=\"logout.php\">Logout</a></td>";
+			echo "<td colspan=\"2\">";
+			echo "<form id=\"searchbar\" method=\"post\" action=\"displayposts.php\">";
+            echo "<input type=\"text\" id=\"search-keyword\" placeholder=\"Search blog posts..\" required=\"required\"/>";
+            echo "<button type=\"submit\" id=\"search\"><i class=\"fa fa-search\"></i></button></form>";
+			echo "</td>";
 			echo "</tr></tbody></table>";
 		}else if($status == 0){
 			//User header
@@ -24,6 +29,11 @@
 			echo "<td><a href=\"#\"></a></td>";
 			echo "<td><a href=\"userinfo.php\">My Account</a></td>";
 			echo "<td><a href=\"logout.php\">Logout</a></td>";
+			echo "<td colspan=\"2\">";
+			echo "<form id=\"searchbar\" method=\"post\" action=\"displayposts.php\">";
+            echo "<input type=\"text\" id=\"search-keyword\" placeholder=\"Search blog posts..\" required=\"required\"/>";
+            echo "<button type=\"submit\" id=\"search\"><i class=\"fa fa-search\"></i></button></form>";
+			echo "</td>";
 			echo "</tr></tbody></table>";
 		}else if($status == -1){
 			//banned user, unregistered user header
@@ -36,6 +46,11 @@
 			echo "<td><a href=\"#\"></a></td>";
 			echo "<td><a href=\"#\"></a></td>";
 			echo "<td><a href=\"signup.php\">Login/Register</a></td>";
+			echo "<td colspan=\"2\">";
+			echo "<form id=\"searchbar\" method=\"post\" action=\"displayposts.php\">";
+            echo "<input type=\"text\" id=\"search-keyword\" placeholder=\"Search blog posts..\" required=\"required\"/>";
+            echo "<button type=\"submit\" id=\"search\"><i class=\"fa fa-search\"></i></button></form>";
+			echo "</td>";
 			echo "</tr></tbody></table>";
 		}
 	}else{

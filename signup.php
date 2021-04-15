@@ -7,6 +7,9 @@
     <head>
         <title>Registration and Login page</title>
         <link rel=stylesheet href="css/style.css">
+        <meta name="viewport" content="width=device-width,initial-scale=0.8,maximum-scale=0.8,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
     </head>
     <body id="register-page-body">
         <?php
@@ -35,7 +38,7 @@
                         <input type="text" id="lastname-register" name="lastname" autofocus placeholder="Last Name" class="register-required"/>
                         <input type="text" id="username-register" name="username" autofocus placeholder="Username" class="register-required"/>
                         <input type="text" id="email" name="email" autofocus placeholder="Email" class="register-required"/>
-                        <input type="password" id="password-register" name="password" autofocus placeholder="Password" class="register-required"/>
+                        <input type="password" id="password-register" name="password" autofocus placeholder="Password (At least 8 characters)" class="register-required"/>
                         <input type="password" id="passwordCheck-register" name="passwordCheck" autofocus placeholder="Confirm password" class="register-required"/>
 
                         <select id="country" name="country" autofocus placeholder="Country" class="register-required" >
@@ -306,6 +309,7 @@
                     </form>
 
             </div>
+
         </div>
         
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
