@@ -17,9 +17,13 @@
                 include 'header.php';
             ?>                
         </header>
-        <div id="topsearch">
-            <input type="text" id="search-keyword" placeholder="Search blog posts.." required="required"/>
-            <button type="submit" id="search" onclick="js/searchposts.js"><i class="fa fa-search"></i></button>
+        <div id="topsearch"> 
+            <!-- <form method='post' action='displaysearchposts.php' id='searchform'>
+                <input type="text" id="search-keyword" placeholder="Search blog posts.." required="required"/>
+                <button type="submit" id="search" onclick="javascript: $.getScript('/js/searchposts.js' , function(){searchposts();});"><i class="fa fa-search"></i></button>
+            </form>  -->
+            <input type="text" id="search-keyword" placeholder="Search blog posts..."/>
+            <button type="submit" id="search"><i class="fa fa-search"></i></button>
         </div>
         <div class="row">
             <div id="featured-posts-left">
@@ -37,6 +41,7 @@
             </div>
             <div id="sidebar-right">
                 <h3>Search By:</h3>
+                <button type="button" 
                 <form method='post' action='displayposts.php'>
                     <input type="submit" name="date" value="Date"/>
                     <input type="submit" name="category" value="Category"/>

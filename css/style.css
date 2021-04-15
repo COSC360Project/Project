@@ -169,36 +169,22 @@ article#center form{
     padding: 10px;
 }
 
-#home-header {
-    padding: 30px;
-    text-align: center;
-    background: white;
-    height: fit-content;
-    overflow: auto;
-}
-#home-header h1 a{
-    font-size: 50px;
-    color: black;
-}
-#home-header table a { color: white;}
-#home-header table a:hover{
-    background-color: #ddd;
-    color: black;
+#topsearch {
+    background-color: #474747;
+    padding: 0.5em;
+    display:block;
 }
 
 #topsearch {
-    background-color: #474747;
-    padding: 0.2em;
-    display:block;
-    
+    margin: 1em 1em;
 }
-
-#searchbar {
-    margin: 0.5em 0.5em;
+#topsearch input {
+    width: max-content;
 }
 
 
 #featured-posts-left {
+    display: block;
     margin: 10px;
     float: left;
     width: 75%;
@@ -207,6 +193,10 @@ article#center form{
     background-color: cornsilk;
     padding: 20px;
     margin-top: 20px;
+    text-align: left;
+}
+.post-entry table td {
+    text-align: left;
 }
 
 #sidebar-right {
@@ -232,13 +222,6 @@ article#center form{
     display: table;
     clear: both;
 }
-
-#home-footer {
-    padding: 20px;
-    text-align: center;
-    margin-top: 20px;
-    background-color: #474747;
-}
 /*** ***/
 
 .footer-section{
@@ -253,6 +236,14 @@ article#center form{
 
 .footer-section h2{
 	padding: 20px 0px 10px 0px;
+}
+
+.footer-section a {
+    color: white;
+}
+.footer-section a:hover {
+    color: black;
+    background-color: white;
 }
 
 .resize{
