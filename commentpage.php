@@ -1,3 +1,4 @@
+<!-- fix where this posts to -->
 <?php 
 session_start();
 ?>
@@ -14,15 +15,12 @@ session_start();
     <?php include "header.php";?>
 </header>
     
-<!--
-<div id = "blogpost">
-</div>
--->
+
 
  <!-- place to leave comments about the post the user chose to read-->
 <div id = "commentForm">
     <h2> Leave a comment </h2>
-    <form action = "/action_page.php" method = "post">
+    <form action = "actionpage.php" method = "post">
         <label for = "comment"> Comment: </label><br>
         <textarea name = "comment" id = "comment" rows = "10" placeholder = "Enter your comment"></textarea><br>
  
@@ -42,11 +40,7 @@ session_start();
 	<p>Date:</p>
 	<p>Category:</p>
 </article>
-<!--
-<article id="left-center">
-<h1>Manage Posts</h1>
-</article>
--->
+
 </div>
 <?php
 include "db_info/db_credentials.php";
@@ -85,7 +79,7 @@ if($error != null){
 			echo "</td>";
 			
 			echo "<td>".$row["date"]."</td>";
-			echo "<td><input type=\"button\" value=\"View\"/><button class=\"deletebutton\" type=\"submit\" value=\"".$row["commentid"]."\" name=\"username\"/>Delete</button></td>";
+			echo "<td><input type=\"button\" value=\"View\"/><button class=\"deletebutton\" type=\"submit\" value=\"".$row["$commentid"]."\" name=\"username\"/>Delete</button></td>";
 			
 			echo "</tr>";
 		}

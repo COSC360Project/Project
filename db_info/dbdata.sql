@@ -36,7 +36,8 @@ CREATE TABLE `Userinfo` (
 	`country` VARCHAR(255),
 	`imageURL` VARCHAR(255) DEFAULT "images/default-avatar-icon.png",
 	`status` INTEGER DEFAULT 0,
-	`joindate` DATE NOT NULL
+	`joindate` DATE NOT NULL,
+	FULLTEXT(username,firstname,lastname,email)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `Blogpost` (
@@ -45,7 +46,8 @@ CREATE TABLE `Blogpost` (
 	`title` VARCHAR(200),
 	`content` TEXT, 
 	`date` DATE, 
-	`category` VARCHAR(20) DEFAULT "Off Topic"
+	`category` VARCHAR(20) DEFAULT "Off Topic",
+	FULLTEXT(title)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `Comment` (

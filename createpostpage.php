@@ -12,29 +12,8 @@ session_start();
 
     <header id="masthead">
         <?php include "header.php";?>
-    <!--
-        <h1>MyBlogPost</h1>
-        <input type="text" placeholder="Search blog posts..">
-        <button type="button">Login</button>
-        <button type="button">Register</button>
-        <button type="button">Create Post</button>
-        <a href=""><img id="avatar" src=""/></a>
-    -->
+    
     </header>
-
-<div id="main">
-    <article id="right-sidebar">
-        <table>
-            <tbody>
-                <tr><td><a href="adminsite.php">Manage Site</a></td></tr>
-                <tr><td><a href="adminusers.php">Manage Users</a></td></tr>
-                <tr><td><a href="adminposts.php">Manage Posts</a></td></tr>
-                <tr><td><a href="admincomments.php">Manage Comments</a></td></tr>
-            </tbody>
-        </table>
-    </article>
-
-    <?php include "db_info/db_credentials.php"; ?>
 
     <div id = "createpost">
         <h2> Write your post below </h2>
@@ -53,6 +32,20 @@ session_start();
         </form>
     </div>
 </div>
+
+<div id="main">
+    <article id="left-sidebar">
+        <h2>Browse Content by:</h2>
+	    <p>Date:</p>
+	    <p>Category:</p>
+    </article>
+    <article id="left-center">
+    <h1>Manage Posts</h1>
+    </article>
+    </div>
+
+    <?php include "db_info/db_credentials.php"; ?>
+
 
 <?php
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
@@ -90,7 +83,7 @@ if($error != null){
 			echo "</td>";
 			
 			echo "<td>".$row["date"]."</td>";
-			echo "<td><input type=\"button\" value=\"View\"/><button class=\"deletebutton\" type=\"submit\" value=\"".$row["commentid"]."\" name=\"username\"/>Delete</button></td>";
+			echo "<td><input type=\"button\" value=\"View\"/><button class=\"deletebutton\" type=\"submit\" value=\"".$row["$commentid"]."\" name=\"username\"/>Delete</button></td>";
 			
 			echo "</tr>";
 		}
