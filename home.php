@@ -8,13 +8,19 @@
         <title>MyBlogPost - Home</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/searchposts.js"></script>
     </head>
     <body>
         <header id="masthead" name="top">
             <?php
                 include 'header.php';
-            ?>
+            ?>                
         </header>
+        <div id="topsearch">
+            <input type="text" id="search-keyword" placeholder="Search blog posts.." required="required"/>
+            <button type="submit" id="search" onclick="js/searchposts.js"><i class="fa fa-search"></i></button>
+        </div>
         <div class="row">
             <div id="featured-posts-left">
                 <!-- Generate posts from db -->

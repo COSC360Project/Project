@@ -63,11 +63,6 @@
 		echo "<td><a href=\"#\"></a></td>";
 		echo "<td><a href=\"#\"></a></td>";
 		echo "<td><a href=\"signup.php\">Login/Register</a></td>";
-		echo "<td colspan=\"2\">";
-		echo "<form id=\"searchbar\" method=\"post\" action=\"displayposts.php\">";
-        echo "<input type=\"text\" id=\"search-keyword\" placeholder=\"Search blog posts..\" required=\"required\"/>";
-        echo "<button type=\"submit\" id=\"search\"><i class=\"fa fa-search\"></i></button></form>";
-		echo "</td>";
 		echo "</tr></tbody></table>";
 	}
 ?>

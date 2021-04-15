@@ -175,36 +175,30 @@ article#center form{
 }
 
 #home-header {
-    padding: 20px 20px;
-    text-align: left;
-    background-color: white;
-    display:inline-block;
+    padding: 30px;
+    text-align: center;
+    background: white;
     height: fit-content;
-    width: 90%;
+    overflow: auto;
 }
-#home-header h1 {
+#home-header h1 a{
     font-size: 50px;
-    margin: 0.2em;
+    color: black;
 }
-#home-header .topnav {
-    overflow: hidden;
+#home-header table a { color: white;}
+#home-header table a:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+#topsearch {
     background-color: #474747;
+    padding: 0.2em;
+    display:block;
+    
 }
-#home-header a {
-    color: white;
-    float: right;
-    text-decoration: none;
-    margin: 0.5em;
-}
-#home-header a:hover {
-    color: lightseagreen;
-}
-.topnav button {
-    margin: 0.5em;
-    cursor: pointer;
-}
+
 #searchbar {
-    display: block;
     margin: 0.5em 0.5em;
 }
 
@@ -215,7 +209,7 @@ article#center form{
     width: 75%;
 }
 .post-entry {
-    background-color: #AAA;
+    background-color: cornsilk;
     padding: 20px;
     margin-top: 20px;
 }
