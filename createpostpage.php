@@ -15,22 +15,7 @@ session_start();
     
     </header>
 
-    <div id = "createpost">
-        <h2> Write your post below </h2>
-        <form action = "displayposts.php" method = "post">
-            <label for = "comment"> Post: </label><br>
-            <textarea name = "comment" id = "comment" rows = "10" placeholder = "Enter your post"></textarea><br>
     
-            <label for = "name"> Your name: </label><br>
-            <input type = "text" id = "name" name = "name" placeholder = "Enter your name"><br>
-    
-            <label for ="email"> Your email: </label><br>
-            <input type = "text" id = "email" name = "email" placeholder = "Enter your email"><br>
-        
-            <input type = "submit" value = "Submit">
-            <input type = "submit" value = "Edit"><br>
-        </form>
-    </div>
 </div>
 
 <div id="main">
@@ -40,62 +25,60 @@ session_start();
 	    <p>Category:</p>
     </article>
     <article id="left-center">
-    <h1>Manage Posts</h1>
+    <h1>Create New Post</h1>
+	<div id = "createpost">
+        <h2> Write your post below: </h2>
+        <form action = "viewnewpost.php" method = "post">
+			<label>Title: </label>
+			<input type="text" name="title" /><br>
+            <label for = "comment">Post: </label><br>
+            <textarea name = "comment" id = "comment" rows = "10" placeholder = "Enter your post"></textarea><br>
+    
+			<label>Category: </label>
+			<div id="cat">
+			<select id="categoryselect" name="category">
+			<?php
+			include "db_info/db_credentials.php";
+
+			$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+			$error = mysqli_connect_error();
+			if($error != null){
+			  $output = "<p>Unable to connect to database!</p>";
+			  exit($output);
+			}else{
+				$sql = "SELECT DISTINCT category FROM blogpost";
+				$result = mysqli_query($connection, $sql);
+				if ($result) {
+					while($row = mysqli_fetch_assoc($result)){
+						print_r($row);
+						echo "<option>".$row["category"]."</option>";
+					}
+				}else{
+					printf("Error: %s\n", mysqli_error($connection));
+					exit();
+				}
+
+			}
+			mysqli_close($connection);
+			?>
+			</select></div><input type="button" value="+" id="categorybutton"/><br>
+        
+            <input type = "submit" value = "Submit" class="button">
+        </form>
+    </div>
+	
+	<script type="text/javascript">
+	var catbutton = document.getElementById("categorybutton");
+	catbutton.addEventListener('click', function(){
+		var select = document.getElementById("categoryselect");
+		document.getElementById("cat").innerHTML = "<input type=\"text\" name=\"category\"/>";
+		catbutton.remove();
+	});
+
+</script>
     </article>
     </div>
 
-    <?php include "db_info/db_credentials.php"; ?>
-
-
-<?php
-$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-$error = mysqli_connect_error();
-if($error != null){
-  $output = "<p>Unable to connect to database!</p>";
-  exit($output);
-}else{
-	$sql = "SELECT postid, authorid, title, content, date, category FROM Blogpost";
-	$result = mysqli_query($connection, $sql);
-	if ($result) {
-		echo "<table><tbody>";
-		while($row = mysqli_fetch_assoc($result)){
-			echo "<tr>";
-			echo "<td>";
-			$postid = $row["postid"];
-			$postsql = "SELECT title FROM blogpost WHERE postid = ".$postid;
-			$postresult = mysqli_query($connection, $postsql);
-				if ($postresult) {
-					$postrow = mysqli_fetch_assoc($postresult);
-					echo $postrow["title"];
-				}
-			mysqli_free_result($postresult);
-			echo "</td>";
-			echo "<td>".$row["content"]."</td>";
-			echo "<td>";
-			$authorid = $row["authorid"];
-			$authorsql = "SELECT username FROM userinfo WHERE authorid = ".$authorid;
-			$authorresult = mysqli_query($connection, $authorsql);
-				if ($authorresult) {
-					$authorrow = mysqli_fetch_assoc($authorresult);
-					echo $authorrow["username"];
-				}
-			mysqli_free_result($authorresult);
-			echo "</td>";
-			
-			echo "<td>".$row["date"]."</td>";
-			echo "<td><input type=\"button\" value=\"View\"/><button class=\"deletebutton\" type=\"submit\" value=\"".$row["$commentid"]."\" name=\"username\"/>Delete</button></td>";
-			
-			echo "</tr>";
-		}
-		echo "</tbody></table>";
-	}else{
-		printf("Error: %s\n", mysqli_error($connection));
-		exit();
-	}
-
-}
-mysqli_close($connection);
-?>
 <footer>
 <?php
 	include "footer.html";

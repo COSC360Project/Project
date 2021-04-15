@@ -7,7 +7,7 @@
 			echo "<article id=\"right-icon\"><img class=\"thumbnail\" src='".$_SESSION["imageurl"]."'/></article>";
 			echo "<table id=\"box\"><tbody><tr>";
 			echo "<td><a href=\"home.php\">Home</a></td>";
-			echo "<td><a href=\"#\">My Posts</a></td>";
+			echo "<td><a href=\"userinfomanageposts.php\">My Posts</a></td>";
 			echo "<td><a href=\"createpostpage.php\">New Post</a></td>";
 			echo "<td><a href=\"adminsite.php\">Administrator</a></td>";
 			echo "<td><a href=\"userinfo.php\">My Account</a></td>";
@@ -19,7 +19,7 @@
 			echo "<article id=\"right-icon\"><img class=\"thumbnail\" src='".$_SESSION["imageurl"]."'/></article>";
 			echo "<table id=\"box\"><tbody><tr>";
 			echo "<td><a href=\"home.php\">Home</a></td>";
-			echo "<td><a href=\"#\">My Posts</a></td>";
+			echo "<td><a href=\"userinfomanageposts.php\">My Posts</a></td>";
 			echo "<td><a href=\"createpostpage.php\">New Post</a></td>";
 			echo "<td><a href=\"#\"></a></td>";
 			echo "<td><a href=\"userinfo.php\">My Account</a></td>";
