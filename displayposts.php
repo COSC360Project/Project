@@ -48,26 +48,6 @@
         else {
             echo $noresult_error;
         }
-
-        // If user requests a search
-        $keyword = $_POST['search-keyword'].value;
-        $searchBtn = $_POST['search'];           
-        if (isset($searchBtn) && !empty($keyword)) {
-            // Validate request
-            if ($_SESSION['REQUEST_METHOD'] == 'POST') {
-                $sqlSearch = "SELECT * FROM blogpots WHERE title LIKE %".$keyword."% ORDER BY date DESC";
-                $searchResult = mysqli_query($conn,$sqlSearch);
-                if (mysqli_num_rows($searchResult) > 0) {
-                    while ($row = mysqli_fetch_assoc($searchResult)) {
-                        displayresults($row);                      
-                    }
-                }
-                else {
-                    echo "Search query:'".$keyword."' returned 0 results.";
-                }
-            } 
-            else echo $request_error;       
-        }
     }   
     // close connection
     mysqli_close($conn);
