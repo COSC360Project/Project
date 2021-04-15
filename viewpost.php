@@ -104,10 +104,15 @@ if($error != null){
 }
 mysqli_close($connection);
 ?>
-<h2>Write a Comment: </h2>
-<textarea id="comment" placeholder="Leave a comment"></textarea>
-<button type="button" value="commentcontent" id="submitbutton"/>Submit</button>
-</div>
+<?php
+if(isset($_SESSION["username"])){
+	echo "<h2>Write a Comment: </h2>";
+	echo "<textarea id=\"comment\" placeholder=\"Leave a comment\"></textarea>";
+	echo "<button type=\"button\" value=\"commentcontent\" id=\"submitbutton\"/>Submit</button>";
+	echo "</div>";
+}
+?>
+
 <script type="text/javascript">
 	var postid = "<?php echo $postid ?>";
 	var commentbutton = document.getElementById("submitbutton");
