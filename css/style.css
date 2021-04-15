@@ -116,9 +116,11 @@ tbody td, tfoot td{
 
 article#center h1, h2, p{
 	margin: 10px 20px 5px 20px;
+	padding-bottom: 0.3em;
 }
-article#left-center h1, h2, p{
+article#left-center h1, h2, textarea, p{
 	margin: 10px 20px 5px 20px;
+	padding-bottom: 0.3em;
 }
 
 #box tbody {
@@ -137,6 +139,32 @@ article#left-center h1, h2, p{
 
 #masthead h1 a{
 	color: black;
+}
+
+#main h1{
+	border-bottom: 1px solid #474747;
+}
+
+div #post{
+	padding: 0.5em 1em 1em 1em;
+}
+div #commentsection{
+	padding: 0.5em 1em 1em 1em;
+
+}
+div #commentsection h2{
+	border-top: 1px solid #DCDCDC;
+	padding-top: 0.3em;
+}
+
+div .com p{
+	margin: 0;
+	padding: 0.5em 0em 0.5em 0em;
+}
+div .com{
+	border-top: 1px dotted #DCDCDC;
+	margin: 0em 1.7em 0em 1.7em;
+	padding: 0.5em;
 }
 
 .thumbnail{
@@ -257,7 +285,7 @@ form div{
 }
 
 .footer-section h2{
-	padding: 20px 0px 10px 0px;
+	padding: 0px 0px 10px 0px;
 }
 
 .footer-section a {

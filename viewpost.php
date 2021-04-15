@@ -44,6 +44,7 @@ if($error != null){
 		$title = $row["title"];
 		$content = $row["content"];
 		$category = $row["category"];
+		$date = $row["date"];
 		$authsql = "SELECT username FROM userinfo WHERE authorid = ".$authorid;
 		$authresult = mysqli_query($connection, $authsql);
 		if ($authresult) {
@@ -52,10 +53,10 @@ if($error != null){
 		}
 		mysqli_free_result($authresult);
 		
-		echo "<h2>".$title."</h2>";
-		echo "<p>Written by: ".$username."<p>";
+		echo "<div id=\"post\"><h2>".$title."</h2>";
+		echo "<p>Written by: ".$username." on ".$date."</p>";
 		echo "<p>".$content."</p>";
-		echo "<p>Category: ".$category."</p>";
+		echo "<p>Category: ".$category."</p></div>";
 	}else{
 		printf("Error: %s\n", mysqli_error($connection));
 		exit();
@@ -64,6 +65,7 @@ if($error != null){
 }
 mysqli_close($connection);
 ?>
+<div id="commentsection">
 <h2>Comments: </h2>
 <?php
 
@@ -91,8 +93,8 @@ if($error != null){
 			}
 			mysqli_free_result($authresult);
 
-			echo "<p>Written by: ".$username." on ".$date."<p>";
-			echo "<p>".$content."</p>";
+			echo "<div class=\"com\"><p>Written by: ".$username." on ".$date."</p>";
+			echo "<p>".$content."</p></div>";
 		}
 	}else{
 		printf("Error: %s\n", mysqli_error($connection));
@@ -102,6 +104,24 @@ if($error != null){
 }
 mysqli_close($connection);
 ?>
+<h2>Write a Comment: </h2>
+<textarea id="comment" placeholder="Leave a comment"></textarea>
+<button type="button" value="commentcontent" id="submitbutton"/>Submit</button>
+</div>
+<script type="text/javascript">
+	var postid = "<?php echo $postid ?>";
+	var commentbutton = document.getElementById("submitbutton");
+	commentbutton.addEventListener('click', function(){
+		var comment = document.getElementById("comment").value;
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("POST", "addcomment.php", false);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("content="+comment+"&postid="+postid);
+		location.reload();
+		
+	});
+
+</script>
 
 </article>
 </div>
