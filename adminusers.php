@@ -82,6 +82,7 @@ if($error != null){
 				echo "</tr>";
 			}
 		}
+		echo "<tr><td colspan=\"2\" id=\"usersearch\"><button id=\"searchuser\"/>Search Users</button></td></tr>";
 		echo "</tbody></table>";
 	}else{
 		printf("Error: %s\n", mysqli_error($connection));
@@ -107,10 +108,14 @@ mysqli_close($connection);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhttp.send("username="+username);
 		location.reload();
-
-		
-		
 	}
+	
+	var searchbutton = document.getElementById("searchuser");
+	searchbutton.addEventListener('click',function(){
+		
+		document.getElementById("usersearch").innerHTML = "<form method=\"post\" action=\"searchuser.php\"></td><td><input type=\"search\" name=\"search-string\" placeholder=\"Search user by name, email, post\"/><input type=\"submit\" /></form>";
+		
+	});
 
 </script>
 </article>
