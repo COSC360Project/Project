@@ -69,7 +69,7 @@ if($error != null){
 			echo "</td>";
 			echo "<td>".$row["date"]."</td>";
 			echo "<td>".$row["category"]."</td>";
-			echo "<td><input type=\"button\" value=\"View\"/><button class=\"deletebutton\" type=\"submit\" value=\"".$row["postid"]."\" name=\"username\"/>Delete</button></td>";
+			echo "<td><form method=\"get\" action=\"viewpost.php\"><button class=\"viewbutton\" type=\"submit\" formmethod=\"get\" value=\"".$row["postid"]."\" name=\"postid\"/>View</button></form><button class=\"deletebutton\" type=\"submit\" value=\"".$row["postid"]."\" name=\"username\"/>Delete</button></td>";
 			
 			echo "</tr>";
 		}
