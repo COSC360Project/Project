@@ -4,7 +4,7 @@
 		if ($status == 1){
 			//Admin header
 			echo "<h1><a href='home.php'>MyBlogPost</a></h1>";
-			echo "<article id=\"right-icon\"><img class=\"thumbnail\" src='".$_SESSION["imageurl"]."'/></article>";
+			echo "<article id=\"right-icon\"><img class=\"thumbnail\" src='".$_SESSION["imageURL"]."'/></article>";
 			echo "<table id=\"box\"><tbody><tr>";
 			echo "<td><a href=\"home.php\">Home</a></td>";
 			echo "<td><a href=\"userinfomanageposts.php\">My Posts</a></td>";
@@ -16,7 +16,7 @@
 		}else if($status == 0){
 			//User header
 			echo "<h1><a href='home.php'>MyBlogPost</a></h1>";
-			echo "<article id=\"right-icon\"><img class=\"thumbnail\" src='".$_SESSION["imageurl"]."'/></article>";
+			echo "<article id=\"right-icon\"><img class=\"thumbnail\" src='".$_SESSION["imageURL"]."'/></article>";
 			echo "<table id=\"box\"><tbody><tr>";
 			echo "<td><a href=\"home.php\">Home</a></td>";
 			echo "<td><a href=\"userinfomanageposts.php\">My Posts</a></td>";

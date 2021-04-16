@@ -29,7 +29,7 @@
         }
 
         //default value
-        $_SESSION["register-error"] = false;
+        
 
 
         include "db_info/db_credentials.php";
