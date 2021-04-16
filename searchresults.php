@@ -19,6 +19,7 @@ session_start();
 
 <div id="main">
     <article id="left-sidebar">
+	<h2>Browse Content by:</h2>
 <?php
 	include "rightsidebar.php";
 ?>

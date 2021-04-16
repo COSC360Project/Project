@@ -6,6 +6,9 @@ $_SESSION["username"] = "catlover24"; //admin
 //$_SESSION["username"] = "hacker-man72"; //banned
 //$_SESSION["username"] = "dsmith72";
 
+$_SESSION["postid"] = 1;
+//$_SESSION["commentidArray"] = array(1,2,11);
+
 include "db_info/db_credentials.php";
 
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);

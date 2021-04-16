@@ -19,6 +19,7 @@ session_start();
 
 <div id="main">
     <article id="left-sidebar">
+	<h2>Browse Content by:</h2>
 <?php
 	include "rightsidebar.php";
 ?>
@@ -79,7 +80,7 @@ mysqli_close($connection);
 
 include "db_info/db_credentials.php";
 $postid = $_GET["postid"];
-
+//$_SESSION["commentidArray"] = array();
 $commentidArray = array();
 
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
@@ -93,6 +94,7 @@ if($error != null){
 	if ($result) {
 		while($row = mysqli_fetch_assoc($result)){
 			$commentid = $row["commentid"];
+			//$_SESSION["commentidArray"][] = $commentid;
 			$commentidArray[] = $commentid;
 			$authorid = $row["authorid"];
 			$content = $row["content"];
@@ -242,16 +244,45 @@ mysqli_close($connection);
 	});
 	
 	var commentidArray = <?php echo json_encode($commentidArray); ?>;
-	var var1 = setInterval(timer, 10000);
+	var var1 = setInterval(timer, 5000);
+	var response = "";
 	function timer(){
 		var xhttp = new XMLHttpRequest();
 		xhttp.open("POST", "refreshcomments.php", true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhttp.send("postid="+postid+"&commentidArray="+commentidArray);
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				//document.getElementById("demo").innerHTML = this.responseText;
+				//alert(this.responseText);
+				response = this.responseText;
+				
+				var responsearray = response.split(",,");
+				//alert(responsearray[0]);
+				if (responsearray[0] == 1){
+					addComment(responsearray[1],responsearray[2],responsearray[3]);
+				}
+				
+			}
+		};
+		
 	}
 	
-	
-
+	function addComment(username,date,content){
+		var node = document.createElement("div");
+		node.setAttribute("class","com");
+		var p = document.createElement("p");
+		var text = document.createTextNode("Written by: "+username+" on "+date);
+		p.appendChild(text);
+		node.appendChild(p);
+		var p1 = document.createElement("p");
+		var text1 = document.createTextNode(content);
+		p1.appendChild(text1);
+		node.appendChild(p1);						
+		var element = document.getElementById("comments");
+		element.append(node);
+		
+	}
 
 </script>
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<h2>Browse Content by:</h2>
 <h3>Date:</h3>
 
 <p>
