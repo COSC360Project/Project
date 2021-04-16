@@ -15,7 +15,7 @@
             }
         }
         //default value
-        $_SESSION["login-error"] = false;
+       
 
 
         include "db_info/db_credentials.php";
