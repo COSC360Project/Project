@@ -167,6 +167,18 @@ div .com{
 	padding: 0.5em;
 }
 
+#contentedit textarea{
+	margin: 0;
+}
+
+#post button{
+	margin: 0em 0em 0em 1.5em;
+}
+
+#post #submitbutton{
+	margin: 0em 0em 0em 1.5em;
+}
+
 .thumbnail{
 	width:3em;
 	height:3em;

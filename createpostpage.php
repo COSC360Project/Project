@@ -30,9 +30,9 @@ session_start();
         <h2> Write your post below: </h2>
         <form action = "viewnewpost.php" method = "post">
 			<label>Title: </label>
-			<input type="text" name="title" /><br>
+			<input type="text" name="title" size="50"/><br>
             <label for = "comment">Post: </label><br>
-            <textarea name = "comment" id = "comment" rows = "10" placeholder = "Enter your post"></textarea><br>
+            <textarea name = "comment" id = "comment" rows = "10" cols="50" placeholder = "Enter your post"></textarea><br>
     
 			<label>Category: </label>
 			<div id="cat">
@@ -50,7 +50,6 @@ session_start();
 				$result = mysqli_query($connection, $sql);
 				if ($result) {
 					while($row = mysqli_fetch_assoc($result)){
-						print_r($row);
 						echo "<option>".$row["category"]."</option>";
 					}
 				}else{
