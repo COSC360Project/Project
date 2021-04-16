@@ -20,7 +20,7 @@ session_start();
         }
 
         var keyword = $('#search-keyword').value();
-        window.onload = function() {
+        document.onload = function() {
             $('#search-btn').addEventListener('click', loadPosts(keyword));
         }
     </script>
@@ -32,9 +32,9 @@ session_start();
     ?>
     </header>
     <div id="topsearch">
-    <form method='post'>
-        <input type="text" id="search-keyword" placeholder="Search blog posts here..."/>
-        <button type="button" id="search-btn"><i class="fa fa-search"></i></button>
+    <form method='get' action="displaysearchedposts.php">
+        <input type="text" name="search-keyword" id="search-keyword" placeholder="Search blog posts here..."/>
+        <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
     </form>
     </div>
     <div class="row">
