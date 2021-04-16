@@ -9,7 +9,21 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    <script src="js/sortposts.js"></script>
+    <script type="text/javascript">        
+        function loadPosts(str) {
+            var postsHere = $('#featured-posts-left');
+            getContent = str;
+
+            $.post('displaysearchedposts.php', {input: getContent}, function(data) {
+                postsHere.html(data);
+            });            
+        }
+
+        var keyword = $('#search-keyword').value();
+        window.onload = function() {
+            $('#search-btn').addEventListener('click', loadPosts(keyword));
+        }
+    </script>
 </head>
 <body>
     <header id="masthead" name="top">
@@ -18,8 +32,10 @@ session_start();
     ?>
     </header>
     <div id="topsearch">
+    <form method='post'>
         <input type="text" id="search-keyword" placeholder="Search blog posts here..."/>
         <button type="button" id="search-btn"><i class="fa fa-search"></i></button>
+    </form>
     </div>
     <div class="row">
         <div id="featured-posts-left">
