@@ -19,9 +19,9 @@ session_start();
 
 <div id="main">
     <article id="left-sidebar">
-        <h2>Browse Content by:</h2>
-	    <p>Date:</p>
-	    <p>Category:</p>
+<?php
+	include "rightsidebar.php";
+?>
     </article>
     <article id="left-center">
     <h1>View Post</h1>
@@ -74,10 +74,13 @@ mysqli_close($connection);
 ?>
 <div id="commentsection">
 <h2>Comments: </h2>
+<div id="comments">
 <?php
 
 include "db_info/db_credentials.php";
 $postid = $_GET["postid"];
+
+$commentidArray = array();
 
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
 $error = mysqli_connect_error();
@@ -89,6 +92,8 @@ if($error != null){
 	$result = mysqli_query($connection, $sql);
 	if ($result) {
 		while($row = mysqli_fetch_assoc($result)){
+			$commentid = $row["commentid"];
+			$commentidArray[] = $commentid;
 			$authorid = $row["authorid"];
 			$content = $row["content"];
 			$date = $row["date"];
@@ -111,6 +116,7 @@ if($error != null){
 }
 mysqli_close($connection);
 ?>
+</div>
 <?php
 if(isset($_SESSION["username"]) && $_SESSION["status"] != -1){
 	echo "<h2>Write a Comment: </h2>";
@@ -234,6 +240,15 @@ mysqli_close($connection);
 			});
 			
 	});
+	
+	var commentidArray = <?php echo json_encode($commentidArray); ?>;
+	var var1 = setInterval(timer, 10000);
+	function timer(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("POST", "refreshcomments.php", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("postid="+postid+"&commentidArray="+commentidArray);
+	}
 	
 	
 

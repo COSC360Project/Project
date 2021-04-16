@@ -20,9 +20,9 @@ session_start();
 
 <div id="main">
     <article id="left-sidebar">
-        <h2>Browse Content by:</h2>
-	    <p>Date:</p>
-	    <p>Category:</p>
+<?php
+	include "rightsidebar.php";
+?>
     </article>
     <article id="left-center">
     <h1>Create New Post</h1>
