@@ -1,6 +1,9 @@
 <?php
     session_start()
 ?>
+<?php
+   $_SESSION["register-error"] = false;
+?>
 <!DOCTYPE html>
 <html>
 
