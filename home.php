@@ -25,32 +25,52 @@ session_start();
         }
     </script>
 </head>
+
+
 <body>
     <header id="masthead" name="top">
     <?php
         include "header.php";
     ?>
     </header>
-    <div id="topsearch">
+	
+    
+	
+	<article id="left-sidebar">
+	<h2>Browse Content by:</h2>
+	<form id="sort-posts-by" method="get" action="displaysortedposts.php">
+                <input type="submit" name="date" value="Date"/>
+                <input type="submit" name="category" value="Category"/>
+    </form>
+	<?php
+	include "rightsidebar.php";
+	?>
+    </article>
+	
+	<div id="searchbar">
+	<div id="topsearch">
+
     <form method='get' action="displaysearchedposts.php">
         <input type="text" name="search-keyword" id="search-keyword" placeholder="Search blog posts here..."/>
         <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
     </form>
     </div>
+	</div>
+	
+	<div id="main">
+	<article id="homeleft-center">
+	
     <div class="row">
         <div id="featured-posts-left">
         <?php
             include "displaydefaultposts.php";
         ?>
         </div>
-        <div id="sidebar-right">
-            <h3>Search by:</h3>
-            <form id="sort-posts-by" method="get" action="displaysortedposts.php">
-                <input type="submit" name="date" value="Date"/>
-                <input type="submit" name="category" value="Category"/>
-            </form>
-        </div>
     </div>
+	</article>
+	</div>
+	
+	
     <footer>
     <?php
         include "footer.html";

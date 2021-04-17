@@ -67,6 +67,17 @@ article#left-center{
 	background-color: white;
 }
 
+#left-sidebar form{
+	padding: 0em 0em 0em 3em;
+}
+
+article#homeleft-center{
+	height: 46.15em;
+	overflow: auto;
+	margin: 0em 5em 0.5em 5em;
+	background-color: white;
+}
+
 
 
 a:link {
@@ -119,6 +130,10 @@ article#center h1, h2, p{
 	padding-bottom: 0.3em;
 }
 article#left-center h1, h2, textarea, p{
+	margin: 10px 20px 5px 20px;
+	padding-bottom: 0.3em;
+}
+article#homeleft-center h1{
 	margin: 10px 20px 5px 20px;
 	padding-bottom: 0.3em;
 }
@@ -245,24 +260,31 @@ form div{
     display:block;
 }
 
-#topsearch {
-    margin: 1em 1em;
-}
 #topsearch input {
     padding: 5px;
     height: 20px
 }
 
+#searchbar{
+	margin: 0em 20.5em 0.5em 5em;
+}
+
 
 #featured-posts-left {
     display: block;
-    margin: 10px;
+    margin: 0px 20px 0px 20px;
     float: left;
-    width: 75%;
 }
+
+#featured-posts-left h2{
+
+    margin: 0;
+
+}
+
 .post-entry {
     background-color: cornsilk;
-    padding: 20px;
+
     margin-top: 20px;
     text-align: left;
 }

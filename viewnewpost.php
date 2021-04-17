@@ -59,17 +59,29 @@ if($error != null){
 	if ($result) {
 		echo "<p> Post Creation Successful</p>";
 		echo "<h2>".$title."</h2>";
-		echo "<p>Written by: ".$username."<p>";
+		echo "<p>Written by: ".$username."</p>";
 		echo "<p>".$content."</p>";
 		echo "<p>Category: ".$category."</p>";
 	}else{
 		printf("Error: %s\n", mysqli_error($connection));
 		exit();
 	}
-
 }
 mysqli_close($connection);
 
+?>
+
+<div id="commentsection">
+<h2>Comments: </h2>
+<div id="comments">
+</div>
+<?php
+if(isset($_SESSION["username"]) && $_SESSION["status"] != -1){
+	echo "<h2>Write a Comment: </h2>";
+	echo "<textarea id=\"comment\" placeholder=\"Leave a comment\"></textarea>";
+	echo "<button type=\"button\" value=\"commentcontent\" id=\"submitbutton\"/>Submit</button>";
+	echo "</div>";
+}
 ?>
     </article>
     </div>
